@@ -5,16 +5,19 @@
 // Import the 'express' module
 var express = require('express'),
 	app = express();
-// Set the Port Number for This Server to Listen To (99)
+// Set the Port Number for This Server to Listen To (5000)
 app.set('port', (process.env.PORT || 5000));
 
 ///////////
 // MAIN CODE
 ///////////
 
-// Respond to a GET Request at address 'localhost:99/' with a message
-app.get('/', function (req,res) {
-	res.send("I am a Server");
+// Respond to a GET Request at address 'localhost:5000/' with a message
+app.get('/:data', function (req,res) {
+
+	res.send(req.params.data);
+	//res.send(req.params.data);
+	//res.send(JSON.parse(req.params.data));
 });
 
 ////////////
