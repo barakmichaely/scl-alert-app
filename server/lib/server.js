@@ -17,7 +17,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/:data', function (req,res) {
 	postmark.send({
 	    "From": "bm09148n@pace.edu",
-	    "To": "barakm18@gmail.com",
+	    "To": "hanastanojkovic@gmail.com",
 	    "Subject": ":)",
 	    "TextBody": req.params.data.toString(),
 	    "Tag": "important"
