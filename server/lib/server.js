@@ -5,7 +5,7 @@
 // Import the 'express' module
 var express = require('express'),
  	app = express(),
-	postmark = require("postmark")(process.env.POSTMARK_API_TOKEN);
+	postmark = require("postmark")('f8536579-7284-4950-9e3d-977cc96332d0');
 // Set the Port Number for This Server to Listen To (5000)
 app.set('port', (process.env.PORT || 5000));
 
@@ -17,7 +17,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/:data', function (req,res) {
 	postmark.send({
 	    "From": "bm09148n@pace.edu",
-	    "To": "hanastanojkovic@gmail.com",
+	    "To": "barakm18@gmail.com",
 	    "Subject": ":)",
 	    "TextBody": "STATIC TEXT",
 	    "Tag": "important"
@@ -30,8 +30,6 @@ app.get('/:data', function (req,res) {
 	});
 
 	res.send(req.params.data);
-	//res.send(req.params.data);
-	//res.send(JSON.parse(req.params.data));
 });
 
 ////////////
