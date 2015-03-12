@@ -1,0 +1,35 @@
+{ "Information":
+	{
+		"Policies": [
+			{	
+				"Pace University Policy Against Discrimination, Harrassment and Retaliation": "Pace University is strongly committed to maintaining a working and learning environment that is free from unlawful discrimination, harassment or retaliation.  The University is an equal opportunity employer and an academic institution which strongly believes that all employment and academic decisions must be made without regard to whether an employee or student possesses characteristics protected by federal, state, or local law and this Policy (protected characteristics). All University officers, administrators, supervisors, staff, faculty members, students, visitors and applicants, as well as vendors, consultants and contractors with whom the University does business are prohibited from engaging in discrimination, harassment or retaliation in violation of this Policy. If you believe that you have been discriminated against or subjected to harassment on the basis of any of the protected characteristics described in this Policy,  or if you believe you have been retaliated against for making a good faith complaint of prohibited discrimination or harassment or for participating in an investigation into a complaint or report of prohibited discrimination or harassment, you may report such incident(s) to the persons identified in the Complaint Procedure set forth below.University officers, administrators and other employees with managerial or supervisory authority (e.g., supervisors, directors, managers, Deans, Department Chairs, etc.) - must report any discrimination, harassment or retaliation that comes to their attention, regardless of whether a complaint is made. All other University staff, faculty, students or third parties who have witnessed or learned of conduct prohibited by the Policy are strongly encouraged to promptly report it to the persons identified in the Complaint Procedure section of this Policy. The University shall take prompt and appropriate corrective action whenever instances of alleged prohibited discrimination, harassment and/or retaliation come to its attention.  The University is committed to investigating all instances of alleged or suspected prohibited discrimination, harassment and/or retaliation, including anonymous complaints or reports from anonymous sources, even if the victim of such discrimination, harassment and/or retaliation does not make a complaint, does not want the matter investigated or does not cooperate with the investigation."
+			}
+		],
+		"Resources" : [
+			{
+		"title":"New York Campus Health Center",
+		"location":"41 Park Row, Suite 313 New York, 10038",
+		"phone number":"(212) 346-1600"
+		},
+		{
+		"title":"Westchester Campus Health Center",
+		"location":"Goldstein Fitness Center, Room 125, 861 Bedford Road - Pleasantville, New York 10570",
+		"phone number":"(914) 773-3760"
+		},
+		{
+		"title":"New York Campus Counseling Center",
+		"location":"156 William Street, 8th Floor, NYC",
+		"phone number":"(212) 346-1526",
+		"emergency phone number":"(212) 346-1800",
+		"office hours":"9:00 AM to 5:00 PM, Monday-Friday"
+		},
+		{
+		"title":"Westchester Campus Counseling Center",
+		"location":"Administration Buildng, 2nd Floor",
+		"phone number":"(914) 773-3710",
+		"emergency phone number":"(914) 773-3400",
+		"office hours":"9:00 AM to 5:00 PM, Monday-Friday"
+		}
+		]
+	}
+}
