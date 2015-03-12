@@ -19,7 +19,7 @@ app.get('/:data', function (req,res) {
 	    "From": "bm09148n@pace.edu",
 	    "To": "hanastanojkovic@gmail.com",
 	    "Subject": ":)",
-	    "TextBody": req.params.data.toString(),
+	    "TextBody": "STATIC TEXT",
 	    "Tag": "important"
 	}, function(error, success) {
 	    if(error) {
