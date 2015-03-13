@@ -6,6 +6,8 @@
 var express = require('express'),
 	app = express(),
 	postmark = require("postmark")('f8536579-7284-4950-9e3d-977cc96332d0');
+	//report = require('./report');
+
 // Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
 
@@ -16,31 +18,23 @@ app.set('port', (process.env.PORT || 8080));
 
 // Respond to a GET Request at address 'localhost:8080/' with a message
 
-
 app.get('/', function (req, res) {
   res.send('GET request to homepage');
-// Respond to a GET Request at address 'localhost:5000/' with a message
-app.get('/report/:data', function (req,res) {
-	postmark.send({
-	    "From": "bm09148n@pace.edu",
-	    "To": "barakm18@gmail.com",
-	    "Subject": ":)",
-	    "TextBody": "STATIC TEXT",
-	    "Tag": "important"
-	}, function(error, success) {
-	    if(error) {
-	        console.error("Unable to send via postmark: " + error.message);
-	       return;
-	    }
-	    console.info("Sent to postmark for delivery")
-	});
+});
 
+// Respond to a GET Request at address 'localhost:8080/report/:data' with a message
+app.get('/report/:data', function (req,res) {
 	res.send(req.params.data);
 });
 
+// Respond to a GET request at address 'localhost:8080/info' with a file
 app.get('/info', function (req,res) {
   res.sendfile('info.json');
 });
+
+//app.get('/test', function(req,res){
+ //res.send(report.test());
+//});
 
 
 ////////////
