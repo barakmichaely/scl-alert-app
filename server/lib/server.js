@@ -18,9 +18,14 @@ app.set('port', (process.env.PORT || 8080));
 
 // Respond to a GET Request at address 'localhost:8080/' with a message
 
-app.get('/', function (req, res) {
-  res.send('GET request to homepage');
+
+
+app.get('/:sara/:x/:xy', function (req, res) {
+  res.send(req.params.sara);
 });
+
+
+
 
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
 app.get('/report/:data', function (req,res) {
