@@ -20,6 +20,9 @@ app.get('/', function (req, res) {
 	res.send('GET request to homepage');
 });
 
+
+
+
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
 app.get('/report/:data', function (req,res) {
 
