@@ -14,6 +14,10 @@
 		E503FA691AAA141700D634B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E503FA681AAA141700D634B8 /* Images.xcassets */; };
 		E503FA6C1AAA141700D634B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503FA6A1AAA141700D634B8 /* LaunchScreen.xib */; };
 		E503FA781AAA141700D634B8 /* AlertAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503FA771AAA141700D634B8 /* AlertAppTests.swift */; };
+		E576B08D1AC4B308000ABE3C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576B08C1AC4B308000ABE3C /* ReportView.swift */; };
+		E576B0911AC4B5A9000ABE3C /* cancel29.png in Resources */ = {isa = PBXBuildFile; fileRef = E576B08F1AC4B5A9000ABE3C /* cancel29.png */; };
+		E576B0921AC4B5A9000ABE3C /* go10.png in Resources */ = {isa = PBXBuildFile; fileRef = E576B0901AC4B5A9000ABE3C /* go10.png */; };
+		E576B0941AC4B631000ABE3C /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E576B0931AC4B631000ABE3C /* MoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		E503FA711AAA141700D634B8 /* AlertAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E503FA761AAA141700D634B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E503FA771AAA141700D634B8 /* AlertAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAppTests.swift; sourceTree = "<group>"; };
+		E576B08C1AC4B308000ABE3C /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		E576B08F1AC4B5A9000ABE3C /* cancel29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel29.png; sourceTree = "<group>"; };
+		E576B0901AC4B5A9000ABE3C /* go10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go10.png; sourceTree = "<group>"; };
+		E576B0931AC4B631000ABE3C /* MoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,10 @@
 			children = (
 				E503FA5E1AAA141700D634B8 /* AppDelegate.swift */,
 				E503FA631AAA141700D634B8 /* ViewController.swift */,
+				E576B08E1AC4B59D000ABE3C /* Images */,
 				E503FA651AAA141700D634B8 /* Main.storyboard */,
+				E576B0931AC4B631000ABE3C /* MoreView.swift */,
+				E576B08C1AC4B308000ABE3C /* ReportView.swift */,
 				E503FA681AAA141700D634B8 /* Images.xcassets */,
 				E503FA6A1AAA141700D634B8 /* LaunchScreen.xib */,
 				E503FA601AAA141700D634B8 /* AlertApp.xcdatamodeld */,
@@ -113,6 +124,15 @@
 				E503FA761AAA141700D634B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E576B08E1AC4B59D000ABE3C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E576B08F1AC4B5A9000ABE3C /* cancel29.png */,
+				E576B0901AC4B5A9000ABE3C /* go10.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E576B0911AC4B5A9000ABE3C /* cancel29.png in Resources */,
+				E576B0921AC4B5A9000ABE3C /* go10.png in Resources */,
 				E503FA671AAA141700D634B8 /* Main.storyboard in Resources */,
 				E503FA6C1AAA141700D634B8 /* LaunchScreen.xib in Resources */,
 				E503FA691AAA141700D634B8 /* Images.xcassets in Resources */,
@@ -217,7 +239,9 @@
 			files = (
 				E503FA641AAA141700D634B8 /* ViewController.swift in Sources */,
 				E503FA621AAA141700D634B8 /* AlertApp.xcdatamodeld in Sources */,
+				E576B08D1AC4B308000ABE3C /* ReportView.swift in Sources */,
 				E503FA5F1AAA141700D634B8 /* AppDelegate.swift in Sources */,
+				E576B0941AC4B631000ABE3C /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +435,7 @@
 				E503FA7D1AAA141700D634B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E503FA7E1AAA141700D634B8 /* Build configuration list for PBXNativeTarget "AlertAppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +444,7 @@
 				E503FA801AAA141700D634B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
