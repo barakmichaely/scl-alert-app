@@ -11,6 +11,12 @@ import UIKit
 class ReportView: UIViewController {
 
     @IBOutlet var dismissButton: UIButton!
+    @IBOutlet var textbox: UITextField!
+    
+    @IBAction func changed(sender: AnyObject) {
+        println(textbox.text)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad() 
@@ -20,6 +26,7 @@ class ReportView: UIViewController {
     }
     
     func dismiss () {
+        println(textbox.text)
         self.dismissViewControllerAnimated(true, completion: {})
     }
 
