@@ -22,27 +22,10 @@ module.exports = {
 		
     return "This is the Report page";
 	},
-	email:function(data){
-		var array = [];
-
-		for (var key in data){
-			array.push(key + ":" + data[key].toString());
-		}
-		//console.log(array);
-		postmark.send({
-			"From": "bm09148n@pace.edu",
-			"To": "ss26468n@pace.edu",
-			"Subject": ":)",
-			"TextBody": data[key],
-			"Tag": "important"
-		}, function(error, success){
-			if(error){
-				console.error("Unable to send via postmark: " + error.message);
-				return;
-			}
-			console.info("Sent to postmark for delivery")
-		});
-	}
+	alert:function(data){
+    console.log(data);
+    
+  }
 };
 
 function email(reportObjectArray){
