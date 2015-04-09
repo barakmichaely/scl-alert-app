@@ -14,6 +14,18 @@ app.set('port', (process.env.PORT || 8080));
 // MAIN CODE
 ///////////
 
+// var coordinates = [40.711365, -74.005132];
+// var formattedCoordinates = [];
+// var url = "https://www.google.com/maps/place/" +formattedCoordinates +"/@" +coordinates[0].toString() +","+coordinates[1].toString()+ ",18z/data=!4m2!3m1!1s0x0:0x0";
+
+console.log(url);
+//https://www.google.com/maps/place/49°28'04.8%22N+17°06'54.5%22E/@49.4680001,17.1151401,18z/data=!4m2!3m1!1s0x0:0x0
+
+
+
+
+
+
 // Respond to a GET Request at address 'localhost:8080/' with a message
 
 app.get('/', function (req, res) {
@@ -36,13 +48,13 @@ app.get('/report/:data', function (req,res) {
 	//	console.log(parsedData.name);
 		//file.function(parameter)
 		report.report(parsedData);
-		report.email();
+		report.email(parsedData);
 	} catch (e){
 		console.log("Invalid Error");
 	}
  
 //data is getting sent to test function in report.js file
-	res.send("");
+	res.send("hello");
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
