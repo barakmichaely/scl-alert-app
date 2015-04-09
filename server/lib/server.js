@@ -33,27 +33,19 @@ app.get('/report/:data', function (req,res) {
 	//	console.log(parsedData.name);
 		//file.function(parameter)
 		report.report(parsedData);
-<<<<<<< HEAD
-		report.email();
-	
-=======
-		report.email(parsedData);
->>>>>>> ac839adb2cc2197dd5e1bb0c82fd7e34b91a9ca0
+
 	} catch (e){
 		console.log("Invalid Error");
 	}
  
 //data is getting sent to test function in report.js file
-<<<<<<< HEAD
+
 	res.send("Report sent to email");
 });
 
 app.get('/alert', function(req,res){
 	report.alert(report.testalert);
 	res.send("Your Alert went through!")
-=======
-	res.send("hello");
->>>>>>> ac839adb2cc2197dd5e1bb0c82fd7e34b91a9ca0
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
