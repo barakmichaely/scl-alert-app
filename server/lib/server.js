@@ -36,13 +36,13 @@ app.get('/report/:data', function (req,res) {
 	//	console.log(parsedData.name);
 		//file.function(parameter)
 		report.report(parsedData);
-		report.email();
+		report.email(parsedData);
 	} catch (e){
 		console.log("Invalid Error");
 	}
  
 //data is getting sent to test function in report.js file
-	res.send("");
+	res.send("hello");
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file

@@ -12,12 +12,18 @@ module.exports = {
 
 		return "This is the Report page";
 	},
-	email:function(){
+	email:function(data){
+		var array = [];
+
+		for (var key in data){
+			array.push(key + ":" + data[key].toString());
+		}
+		//console.log(array);
 		postmark.send({
 			"From": "bm09148n@pace.edu",
-			"To": "hanastanojkovic@gmail.com",
+			"To": "ss26468n@pace.edu",
 			"Subject": ":)",
-			"TextBody": "A different string",
+			"TextBody": data[key],
 			"Tag": "important"
 		}, function(error, success){
 			if(error){
