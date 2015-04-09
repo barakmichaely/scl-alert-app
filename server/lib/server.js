@@ -20,9 +20,6 @@ app.get('/', function (req, res) {
 	res.send('GET request to homepage');
 });
 
-
-
-
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
 app.get('/report/:data', function (req,res) {
 
@@ -37,12 +34,18 @@ app.get('/report/:data', function (req,res) {
 		//file.function(parameter)
 		report.report(parsedData);
 		report.email();
+	
 	} catch (e){
 		console.log("Invalid Error");
 	}
  
 //data is getting sent to test function in report.js file
-	res.send("");
+	res.send("Report sent to email");
+});
+
+app.get('/alert', function(req,res){
+	report.alert(report.testalert);
+	res.send("Your Alert went through!")
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
