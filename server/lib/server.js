@@ -32,11 +32,8 @@ app.get('/', function (req, res) {
 	res.send('GET request to homepage');
 });
 
-
-
-
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
-app.get('/report/:data', function (req,res) {
+app.post('/report/:data', function (req,res) {
 
 // type stuff like below
 //{"time":"12am","where":"on campus","name":"joe"}
@@ -48,13 +45,27 @@ app.get('/report/:data', function (req,res) {
 	//	console.log(parsedData.name);
 		//file.function(parameter)
 		report.report(parsedData);
+
 		report.email(parsedData);
+
+
+
 	} catch (e){
 		console.log("Invalid Error");
 	}
  
 //data is getting sent to test function in report.js file
+
 	res.send("hello");
+
+
+	res.send("Report sent to email");
+});
+
+app.post('/alert', function (req, res) {
+	report.alert(report.testalert);
+  	res.send('Alert went through!');
+
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
