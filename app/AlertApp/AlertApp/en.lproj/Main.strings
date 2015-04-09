@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "5En-9P-xjQ"; */
+"5En-9P-xjQ.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "File a Report"; ObjectID = "LFA-VF-ZsA"; */
+"LFA-VF-ZsA.text" = "File a Report";
+
+/* Class = "UIButton"; normalTitle = "Edit Contacts"; ObjectID = "Qre-Mb-agD"; */
+"Qre-Mb-agD.normalTitle" = "Edit Contacts";
+
+/* Class = "UIButton"; normalTitle = "Read My Rights!"; ObjectID = "RVh-F4-C3m"; */
+"RVh-F4-C3m.normalTitle" = "Read My Rights!";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "XHf-Z6-csj"; */
+"XHf-Z6-csj.normalTitle" = "Send";
+
+/* Class = "UIButton"; normalTitle = "Report"; ObjectID = "g2H-Af-BJZ"; */
+"g2H-Af-BJZ.normalTitle" = "Report";
+
+/* Class = "UIButton"; normalTitle = "More"; ObjectID = "iOC-rE-yP4"; */
+"iOC-rE-yP4.normalTitle" = "More";
+
+/* Class = "UILabel"; text = "More"; ObjectID = "kh8-pu-R8W"; */
+"kh8-pu-R8W.text" = "More";
+
+/* Class = "UIButton"; normalTitle = "Alert"; ObjectID = "oBp-Ie-gwR"; */
+"oBp-Ie-gwR.normalTitle" = "Alert";
