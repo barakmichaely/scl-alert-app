@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 });
 
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
-app.get('/report/:data', function (req,res) {
+app.post('/report/:data', function (req,res) {
 
 // type stuff like below
 //{"time":"12am","where":"on campus","name":"joe"}
@@ -43,9 +43,9 @@ app.get('/report/:data', function (req,res) {
 	res.send("Report sent to email");
 });
 
-app.get('/alert', function(req,res){
+app.post('/alert', function (req, res) {
 	report.alert(report.testalert);
-	res.send("Your Alert went through!")
+  	res.send('Alert went through!');
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file

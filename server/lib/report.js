@@ -24,7 +24,6 @@ module.exports = {
 	},
 	alert:function(data){
     console.log(data);
-    
   }
 };
 
