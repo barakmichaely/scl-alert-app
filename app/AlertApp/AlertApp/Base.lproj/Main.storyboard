@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPs-ZE-gIj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739.5" y="154"/>
+            <point key="canvasLocation" x="723" y="129"/>
         </scene>
         <!--Report View-->
         <scene sceneID="VTC-wZ-TOu">
@@ -265,15 +265,15 @@
                                 <exclude reference="d15-Mh-gc2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4oZ-hD-ZUK"/>
                                 <exclude reference="T7F-zl-ba2"/>
                                 <exclude reference="k1E-if-hrQ"/>
                                 <exclude reference="kiC-SB-j7u"/>
                                 <exclude reference="IBi-Kg-24U"/>
                                 <exclude reference="Ncz-IG-nn9"/>
+                                <exclude reference="R0Q-8N-71K"/>
+                                <exclude reference="4oZ-hD-ZUK"/>
                                 <exclude reference="0Vz-R4-B79"/>
                                 <exclude reference="wKP-kg-iSP"/>
-                                <exclude reference="R0Q-8N-71K"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -284,15 +284,15 @@
                                 <include reference="d15-Mh-gc2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4oZ-hD-ZUK"/>
                                 <include reference="T7F-zl-ba2"/>
                                 <include reference="k1E-if-hrQ"/>
                                 <include reference="kiC-SB-j7u"/>
                                 <include reference="IBi-Kg-24U"/>
                                 <include reference="Ncz-IG-nn9"/>
+                                <include reference="R0Q-8N-71K"/>
+                                <include reference="4oZ-hD-ZUK"/>
                                 <include reference="0Vz-R4-B79"/>
                                 <include reference="wKP-kg-iSP"/>
-                                <include reference="R0Q-8N-71K"/>
                             </mask>
                         </variation>
                     </view>
@@ -311,6 +311,7 @@
             <objects>
                 <collectionViewController id="G2f-Fh-hpr" customClass="CollectionTest" customModule="AlertApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HT3-l5-Bq5">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U1j-PI-v0z">
@@ -342,6 +343,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jCp-Ek-Xw5">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
@@ -587,14 +589,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="w6B-1B-V2A"/>
                                         <exclude reference="A9M-gO-Jim"/>
+                                        <exclude reference="w6B-1B-V2A"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="w6B-1B-V2A"/>
                                         <include reference="A9M-gO-Jim"/>
+                                        <include reference="w6B-1B-V2A"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -635,14 +637,14 @@
                                 <exclude reference="4dT-ai-S5M"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="blz-Vt-RCw"/>
+                                <exclude reference="CaF-Nm-537"/>
+                                <exclude reference="mop-3K-9K5"/>
+                                <exclude reference="yDm-SO-pnH"/>
                                 <exclude reference="zh4-Dv-ffW"/>
                                 <exclude reference="UgU-dL-jvQ"/>
                                 <exclude reference="WLD-ow-gjc"/>
                                 <exclude reference="kfs-8B-C2k"/>
-                                <exclude reference="CaF-Nm-537"/>
-                                <exclude reference="mop-3K-9K5"/>
-                                <exclude reference="yDm-SO-pnH"/>
-                                <exclude reference="blz-Vt-RCw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -652,14 +654,14 @@
                                 <include reference="4dT-ai-S5M"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="blz-Vt-RCw"/>
+                                <include reference="CaF-Nm-537"/>
+                                <include reference="mop-3K-9K5"/>
+                                <include reference="yDm-SO-pnH"/>
                                 <include reference="zh4-Dv-ffW"/>
                                 <include reference="UgU-dL-jvQ"/>
                                 <include reference="WLD-ow-gjc"/>
                                 <include reference="kfs-8B-C2k"/>
-                                <include reference="CaF-Nm-537"/>
-                                <include reference="mop-3K-9K5"/>
-                                <include reference="yDm-SO-pnH"/>
-                                <include reference="blz-Vt-RCw"/>
                             </mask>
                         </variation>
                     </view>
