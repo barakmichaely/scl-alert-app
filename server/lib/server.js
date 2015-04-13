@@ -50,7 +50,7 @@ app.post('/alert', function (req, res) {
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
 app.get('/info', function (req,res) {
-	res.sendfile('info.json');
+	res.sendfile(__dirname + '/info.json');
 });
 
 ////////////
