@@ -24,12 +24,10 @@ app.get('/', function (req, res) {
 app.post('/report/:data', function (req,res) {
 
 // type stuff like below
-//{"time":"12am","where":"on campus","name":"joe"}
+//{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
 	try {
-	//turns "data" into a JSON file 
-	
 		var parsedData = JSON.parse(req.params.data);
-	
+
 		report.report(parsedData);
 	
 	} catch (e){
