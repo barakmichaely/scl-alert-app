@@ -20,6 +20,7 @@ app.get('/', function(req, res) {
     res.send('GET request to homepage');
 });
 
+// This request is still under construction, attempted scraping to extract data from provided user email
 app.get('/whitepages', function(req, res) {
 	var request = require('request');
 	request('https://whitepages.pace.edu/', function (error, response, body) {
@@ -39,12 +40,41 @@ app.get('/whitepages', function(req, res) {
 	})
 });
 
+// (Verification Step 1) This Request is asking for a @pace.edu email to be entered 
+app.post('/verification/:data',function(req, res){
+	
+	try{
+
+		var emailAddress = req.params.data;
+
+		report.checkEmail(emailAddress);
+
+		res.send(200);}
+	catch(e){
+		console.log("Invalid Error");
+		res.send(400);
+	}
+});
+
+
+// (Verification Step 5) This Request is asking for the code sent to the email to be entered
+app.post('/verification/code/:data',function(req, res){
+	
+		var receivedCode = req.params.data;
+		//console.log("This was entered: "+testCode);
+		if (report.checkCode(receivedCode)==true){
+			res.send(200);
+		}
+		else{
+			res.send(418);
+		}
+});
 
 // Respond to a GET Request at address 'localhost:8080/report/:data' with a message
 app.post('/report/:data', function(req, res) {
 
     // type stuff like below
-    //{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
+    //{"name":"evan","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
     try {
         var parsedData = JSON.parse(req.params.data);
 
