@@ -10,11 +10,11 @@ import UIKit
 import CoreLocation
 
 class AlertViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     
-    let kAccuracyInKm = CLLocationAccuracy(0.001)//in kilometer
+    let kAccuracyInKm = CLLocationAccuracy(0.001)//in kilometer -> have to check whether the high accuracy is necessary; higher accuracy eats up battery
     let kDistanceFilter = CLLocationDistance(1)//in meter
     
     let locationManager = CLLocationManager()
@@ -30,10 +30,8 @@ class AlertViewController: UIViewController, CLLocationManagerDelegate {
 
         if CLLocationManager.locationServicesEnabled() {
             
-            let authorization = CLLocationManager.authorizationStatus()
-            if authorization == CLAuthorizationStatus.NotDetermined {
-                locationManager.requestWhenInUseAuthorization()
-            }
+            locationManager.requestWhenInUseAuthorization()
+
             locationManager.delegate = self
             locationManager.desiredAccuracy = kAccuracyInKm
             locationManager.distanceFilter = kDistanceFilter

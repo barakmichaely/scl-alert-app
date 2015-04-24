@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hFA-aC-VsA" kind="popoverPresentation" popoverAnchorView="oBp-Ie-gwR" id="0yV-nF-Fmj">
+                                    <segue destination="hFA-aC-VsA" kind="popoverPresentation" popoverAnchorView="oBp-Ie-gwR" id="Peq-7n-ZEI">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -296,15 +296,6 @@
                                     <rect key="frame" x="16" y="81" width="68" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqq-6A-PRa">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="81" width="42" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVd-pk-o8L">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -320,7 +311,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="159" width="42" height="21"/>
+                                    <rect key="frame" x="159" y="159" width="180" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqq-6A-PRa">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="81" width="180" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -328,23 +328,23 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="KtC-kC-FZW"/>
-                                <exclude reference="xqq-6A-PRa"/>
                                 <exclude reference="TVd-pk-o8L"/>
                                 <exclude reference="X8I-ii-rgg"/>
+                                <exclude reference="xqq-6A-PRa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="KtC-kC-FZW"/>
-                                <include reference="xqq-6A-PRa"/>
                                 <include reference="TVd-pk-o8L"/>
                                 <include reference="X8I-ii-rgg"/>
+                                <include reference="xqq-6A-PRa"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="latitudeLabel" destination="xqq-6A-PRa" id="oy2-6F-RuV"/>
-                        <outlet property="longitudeLabel" destination="X8I-ii-rgg" id="pAX-oU-IFW"/>
+                        <outlet property="latitudeLabel" destination="xqq-6A-PRa" id="JKT-Ny-9cu"/>
+                        <outlet property="longitudeLabel" destination="X8I-ii-rgg" id="0lc-xS-EXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFf-zf-UJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
