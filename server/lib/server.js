@@ -40,14 +40,13 @@ app.get('/whitepages', function(req, res) {
 	})
 });
 
-// (Verification Step 1) This Request is asking for a @pace.edu email to be entered 
-app.post('/verification/:data',function(req, res){
+// (Verification Step 1) (SIGN UP) This Request is asking for a @pace.edu email to be entered 
+app.post('/verification/:email',function(req, res){
 	
 	try{
+		var receivedEmail = req.params.email;
 
-		var emailAddress = req.params.data;
-
-		report.checkEmail(emailAddress);
+		report.checkEmail(receivedEmail);
 
 		res.send(200);}
 	catch(e){
@@ -57,12 +56,13 @@ app.post('/verification/:data',function(req, res){
 });
 
 
-// (Verification Step 5) This Request is asking for the code sent to the email to be entered
-app.post('/verification/code/:data',function(req, res){
+// (Verification Step 5) (VERIFY USER) This Request is asking for the code sent to the email to be entered
+app.post('/verification/:email/:code',function(req, res){
 	
-		var receivedCode = req.params.data;
-		//console.log("This was entered: "+testCode);
-		if (report.checkCode(receivedCode)==true){
+		var receivedCode = req.params.code;
+		var receivedEmail = req.params.email;
+
+		if (report.checkCode(receivedEmail,receivedCode)==true){
 			res.send(200);
 		}
 		else{
@@ -87,23 +87,20 @@ app.post('/report/:data', function(req, res) {
 
 });
 
+// FIX THIS FUNCTION SO IT ISN'T JUST FOR TESTING PURPOSES! 
+
 app.post('/alert/:data', function(req, res) {
 
 // use this for testing purposes
 	if (req.params.data == "test") {
-
     	report.alert(report.testalert);
 	}
 // the else is for actual data passed in 
 	else {
-   
    		report.alert(JSON.parse(req.params.data));
    	}
 
     res.send(200);
-
-    // missing is an alternate response code if this does not work
-
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
