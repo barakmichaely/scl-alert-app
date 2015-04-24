@@ -15,66 +15,79 @@ app.set('port', (process.env.PORT || 8080));
 // MAIN CODE
 ///////////
 
-// Respond to a GET Request at address 'localhost:8080/' with a message
+// Respond to a GET request at address 'localhost:8080/' with a message
 app.get('/', function(req, res) {
     res.send('GET request to homepage');
 });
 
-// This request is still under construction, attempted scraping to extract data from provided user email
+// (UNDER CONSTRUCTION) Attempted scraping to extract data from provided user email
 app.get('/whitepages', function(req, res) {
-	var request = require('request');
-	request('https://whitepages.pace.edu/', function (error, response, body) {
+    var request = require('request');
+    request('https://whitepages.pace.edu/', function(error, response, body) {
+
+        if (!error && response.statusCode == 200) {
+            $ = cheerio.load(body);
+
+            // below is a loop
+            _.each($('#search_scope option'), function(el) {
+                el = $(el);
+                console.log(el.text());
+            });
+
+            res.send(body) // Show the HTML for the pace whitepages. 
+        }
+
+    })
+});
+
+// Respond to POST request at address 'localhost:8080/verification/:email' with a name@domain.com format
+app.post('/verification/:email', function(req, res) {
+
+    try {
+        var receivedEmail = req.params.email;
+
+        report.checkEmail(receivedEmail);
+
+        res.send(200);
+    } catch (e) {
+        console.log("Invalid Error");
+        res.send(400);
+    }
+});
+
+// Respond to POST request at address 'localhost:8080/verification/:email/:code' with a name@domain.com format email and the received 4-digit verification code
+app.post('/verification/:email/:code', function(req, res) {
+
+    var receivedEmail = req.params.email;
+    var receivedCode = req.params.code;
+    
+    //try to have check code just to "Check" the code and another function to verify whether everything is correct or not
+    if (report.checkCode(receivedEmail, receivedCode) == true) {
+        res.send(200);
+    } else {
+        res.send(418);
+    }
+});
+
+// Respond to POST request at address 'localhost:8080/sucessfullyRegistered/:email/:code' with provided email and verification code. Server acknowledges that the app registered the email.
+app.post('/sucessfullyRegistered/:email/:code', function(req,res){
 	
-	if (!error && response.statusCode == 200) {
-		$ = cheerio.load(body);
+	var receivedEmail = req.params.email;
+	var receivedCode = req.params.code;
 
-		// below is a loop
-		_.each($('#search_scope option'), function(el){
-			el = $(el);
-			console.log(el.text());
-		});
-
-		res.send(body) // Show the HTML for the pace whitepages. 
+	if (report.removeFromList(receivedEmail,receivedCode) == true){
+		res.send("Your email has been verified!");
 	}
-	
-	})
-});
-
-// (Verification Step 1) (SIGN UP) This Request is asking for a @pace.edu email to be entered 
-app.post('/verification/:email',function(req, res){
-	
-	try{
-		var receivedEmail = req.params.email;
-
-		report.checkEmail(receivedEmail);
-
-		res.send(200);}
-	catch(e){
-		console.log("Invalid Error");
-		res.send(400);
+	else{
+		res.send("Something went wrong.");
 	}
+
 });
 
-
-// (Verification Step 5) (VERIFY USER) This Request is asking for the code sent to the email to be entered
-app.post('/verification/:email/:code',function(req, res){
-	
-		var receivedCode = req.params.code;
-		var receivedEmail = req.params.email;
-
-		if (report.checkCode(receivedEmail,receivedCode)==true){
-			res.send(200);
-		}
-		else{
-			res.send(418);
-		}
-});
-
-// Respond to a GET Request at address 'localhost:8080/report/:data' with a message
+// Respond to POST request at address 'localhost:8080/report/:data' with a message in this format
+// {"name":"evan","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblah"}
 app.post('/report/:data', function(req, res) {
 
-    // type stuff like below
-    //{"name":"evan","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
     try {
         var parsedData = JSON.parse(req.params.data);
 
@@ -87,20 +100,26 @@ app.post('/report/:data', function(req, res) {
 
 });
 
-// FIX THIS FUNCTION SO IT ISN'T JUST FOR TESTING PURPOSES! 
-
+// Respond to POST request at address 'localhost:8080/alert/test'. For some reason the actual JSON (the else block) does not work.
 app.post('/alert/:data', function(req, res) {
 
-// use this for testing purposes
-	if (req.params.data == "test") {
-    	report.alert(report.testalert);
-	}
-// the else is for actual data passed in 
-	else {
-   		report.alert(JSON.parse(req.params.data));
-   	}
+    try {
+        // use this for testing purposes
+        if (req.params.data == "test") {
+            report.alert(report.testalert);
+        }
+        // the else is for actual data passed in. Assume it is already in a JSON format
+        else {
+            var parsedData = JSON.parse(req.params.data);
 
-    res.send(200);
+            report.alert(parsedData);
+        }
+
+        res.send(200);
+    } catch (e) {
+        console.log("Invalid Error");
+        res.send(400);
+    }
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file

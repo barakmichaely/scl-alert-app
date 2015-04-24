@@ -2,24 +2,20 @@
 // mailing script
 var postmark = require("postmark")('f8536579-7284-4950-9e3d-977cc96332d0');
 
-// (VERIFICATION) Three variables below ... (add more later)
+// Initialized List variable to store Emails and their matching Verification Codes
 var list = [];
-var code;
-var counter = 0;
 
-module.exports = {    
-  // below is temporary alert stored in a variable
+module.exports = {
+    // below is temporary alert stored in a variable
     testalert: {
         "name": "eiman",
-        "location": [40.7134519,-74.003797],
+        "location": [40.7134519, -74.003797],
         "date": "04/09/2015",
         "time": "3:34PM",
         "contacts": ["1234567890", "1234567890", "1234567890", "1234567890", "1234567890"]
     },
 
-    report: function(data) {
-        // assume data received will be formatted in this order.
-        //{"name":"barak","date":"Jun 11th 2013","time":"3:12PM","report":"blahblahblahblahblahblahblahblahblah"}  
+    report: function(data) { 
         var subjectLine = "Sexual Harrassment Report!"
 
         var reportObjectArray = [];
@@ -34,8 +30,6 @@ module.exports = {
         return "This is the Report page";
     },
     alert: function(data) {
-        // assume data received will be formatted in the order of "testalert"
-
         var subjectLine = "Sexual Harrassment Alert!"
 
         var alertObjectArray = [];
@@ -50,96 +44,121 @@ module.exports = {
 
         // because SMS is not set up, this formatted data currently has no where to go. 
         return alertData;
-  },
+    },
 
-// (Verification Step 2) function checks to see if email matches @pace.edu
-    checkEmail: function(givenEmail){
+    // Checks to see if email matches @pace.edu
+    checkEmail: function(givenEmail) {
 
+        if (givenEmail.indexOf("@pace.edu") != -1) {
 
-        if (givenEmail.indexOf("@pace.edu")!=-1){
-            code = generateCode(4);
+            combinePair(givenEmail);
 
-            //create empty list variable and add email into it
-            list.push({"email":givenEmail,"verificationcode":code});
-
-            sendCode(list[counter]);
-
-            counter = counter + 1;
-
-        }
-        else {
-          console.log("wrong email");
-          // how do you get the original function in server.js called again?
+        } else {
+            console.log("wrong email");
         }
     },
 
-// (Verification Final Step) checks to see if email and code match in the list
-    checkCode: function(givenEmail, givenCode){
-        
-        for (var index = 0;index<list.length;index++){
+    // Checks to see if email and code match in the list
+    checkCode: function(givenEmail, givenCode) {
 
-            console.log("Looking at list[index]: "+list[index].email);
-            console.log("List: "+list.toString());
+        for (var index = 0; index < list.length; index++) {
 
-            if (list[index].email == givenEmail){
+            if (list[index].email == givenEmail) {
 
-                if (list[index].verificationcode == givenCode){
+                if (list[index].code == givenCode) {
 
-                  console.log("Looking at list[index].email: "+list[index].email);
-
-                  console.log("Your email is verified!");
-                  return true;
-                }
-                else {
-                  console.log("Incorrect verification code.");
-                  return false;
+                    console.log("Your code matches!");
+                    
+                    return true;
+                } else {
+                    console.log("Incorrect verification code.");
+                    return false;
                 }
             }
-      }
-}
+        }
+    },
+    //Lets user know whether their email is registered or not
+    removeFromList: function(givenEmail,givenCode){
+      
+      for (var index = 0; index < list.length; index++) {
+
+            if (list[index].email == givenEmail) {
+
+                if (list[index].code == givenCode) {
+
+                    console.log("Server acknowledges that App completed registration");
+
+                    list.splice(index, 1);
+      
+                    return true;
+                } else {
+                    console.log("Something went wrong.");
+                    return false;
+                }
+            }
+        }      
+
+    }
 };
 
+// Retrieves Google Maps coordinates of the user's location
 function getGoogleMapLink(location) {
-      
-        return "https://www.google.com/maps/place/" +"/@" +location[0].toString() +","+location[1].toString()+ ",18z/data=!4m2!3m1!1s0x0:0x0";
+
+    return "https://www.google.com/maps/place/" + "/@" + location[0].toString() + "," + location[1].toString() + ",18z/data=!4m2!3m1!1s0x0:0x0";
 
 }
 
-// (Verification) generates a randomized code of a certain length
-function generateCode(len)
-{
+// Once email is ensured to be of the Pace domain, it is then combined with a code
+function combinePair(checkedEmail) {
+
+    code = generateCode(4);
+
+    var emailCodePair = {
+        "email": checkedEmail,
+        "code": code
+    }
+
+    list.push(emailCodePair);
+
+    sendCode(emailCodePair);
+
+}
+
+// Generates a randomized code of a certain length
+function generateCode(len) {
     var text = "";
     var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < len; i++ ){
+    for (var i = 0; i < len; i++) {
         text += charset.charAt(Math.floor(Math.random() * charset.length));
-      }
-     return text;
+    }
+    return text;
 }
 
-// (Verification) This function sends email with the verification code
-function sendCode(list){
+// Sends email with the verification code
+function sendCode(emailCodePair) {
 
     postmark.send({
-      "From": "bm09148n@pace.edu",
-      "To": ''+list.email+'',
-      "Subject": "Verification code for Sexual Harassment App!",
-      "TextBody": "Type this into POSTMAN localhost:8080/verification/"+list.email+"/"+list.verificationcode,
-      "Tag": "Important"
+        "From": "bm09148n@pace.edu",
+        "To": "hs20139n@pace.edu",
+        "Subject": "Verification code for Sexual Harassment App!",
+        "TextBody": "Type this into POSTMAN localhost:8080/verification/" + emailCodePair.email + "/" + emailCodePair.code,
+        "Tag": "Important"
     }, function(error, success) {
-      if (error) {
-          console.error("Unable to send via postmark: " + error.message);
-          return;
-      }
-      console.info("Sent to postmark for delivery")
+        if (error) {
+            console.error("Unable to send via postmark: " + error.message);
+            return;
+        }
+        console.info("Sent to postmark for delivery")
     });
 }
 
+// Sends email with the user's report or their alert
 function email(emailTextSubject, emailTextBody) {
     postmark.send({
         "From": "bm09148n@pace.edu",
         "To": "hanastanojkovic@gmail.com",
-        "Subject": ''+emailTextSubject+'',
+        "Subject": '' + emailTextSubject + '',
         "TextBody": '' + emailTextBody + '',
         "Tag": "Important"
     }, function(error, success) {
