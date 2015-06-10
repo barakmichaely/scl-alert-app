@@ -152,13 +152,13 @@
                                 <exclude reference="ldb-qS-Hbr"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dxL-PA-Mwd"/>
                                 <exclude reference="GFl-KM-l6z"/>
                                 <exclude reference="UfA-fD-fiU"/>
+                                <exclude reference="wgE-fJ-bC6"/>
                                 <exclude reference="7XF-tt-VYK"/>
                                 <exclude reference="Orb-ch-nXj"/>
                                 <exclude reference="pjH-BL-Aln"/>
-                                <exclude reference="wgE-fJ-bC6"/>
-                                <exclude reference="dxL-PA-Mwd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -168,13 +168,13 @@
                                 <include reference="ldb-qS-Hbr"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dxL-PA-Mwd"/>
                                 <include reference="GFl-KM-l6z"/>
                                 <include reference="UfA-fD-fiU"/>
+                                <include reference="wgE-fJ-bC6"/>
                                 <include reference="7XF-tt-VYK"/>
                                 <include reference="Orb-ch-nXj"/>
                                 <include reference="pjH-BL-Aln"/>
-                                <include reference="wgE-fJ-bC6"/>
-                                <include reference="dxL-PA-Mwd"/>
                             </mask>
                         </variation>
                     </view>
@@ -184,6 +184,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="cancelAlertButton" destination="kpe-AD-GPM" id="xh6-fC-Dge"/>
+                        <outlet property="sendAlertButton" destination="1Sy-q4-b4R" id="3kt-0V-Cp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkc-ZN-LcF" sceneMemberID="firstResponder"/>

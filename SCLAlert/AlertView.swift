@@ -11,7 +11,7 @@ import UIKit
 class AlertView: UIViewController {
 
     @IBOutlet var cancelAlertButton: UIButton!
-    
+    @IBOutlet var sendAlertButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,17 @@ class AlertView: UIViewController {
         cancelAlertButton.layer.cornerRadius = 12
         cancelAlertButton.imageView?.image = cancelAlertButton.imageView?.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         cancelAlertButton.addTarget(self, action: "cancelAlert", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        sendAlertButton.addTarget(self, action: "sendAlert", forControlEvents: UIControlEvents.TouchUpInside)
 
     }
     
     func cancelAlert() {
         self.dismissViewControllerAnimated(false, completion: {})
+    }
+    
+    func sendAlert() {
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 
     override func didReceiveMemoryWarning() {

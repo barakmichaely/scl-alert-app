@@ -11,6 +11,9 @@ import UIKit
 
 class ReportCollection: UICollectionViewController {
 
+    var openReports = 0
+    var savedReports = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,11 +48,10 @@ class ReportCollection: UICollectionViewController {
         
         var v = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as! UICollectionReusableView
         
-        println(v.viewWithTag(2))
+        println(v.subviews.count)
         
         if (indexPath.section == 1) {
-            
-            (v.viewWithTag(2) as? UILabel)?.text = "Sent Reports"
+            //(v.viewWithTag(2) as? UILabel)?.text = "Sent Reports"
         }
         
 //        if (kind == UICollectionElementKindSectionHeader) {
@@ -68,14 +70,24 @@ class ReportCollection: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return 1
+        if (section == 1) {
+            return savedReports
+        }
+        return openReports + 1
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("report", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        var cellID = "report"
+        
+        if (indexPath.section == 0 && indexPath.row == openReports) {
+            cellID = "new"
+        }
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! UICollectionViewCell
         
         cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 5
         cell.layer.borderColor = UIColor.whiteColor().CGColor
         cell.layer.borderWidth = 1
     
@@ -85,8 +97,25 @@ class ReportCollection: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView")! as! ReportView
-        self.showViewController(reportView, sender: self)
+
+        if (indexPath.section == 0 && indexPath.row == openReports) {
+            // Create New Report
+            
+            openReports += 1
+            collectionView.reloadData()
+        } else {
+            // View Report
+            
+            var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView")! as! ReportView
+            
+            if (indexPath.section == 1) {
+                reportView.editable = false
+            }
+            
+            self.showViewController(reportView, sender: self)
+        }
+        
+
     }
     
 

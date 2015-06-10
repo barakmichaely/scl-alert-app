@@ -388,17 +388,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.68627452850000004" alpha="1" colorSpace="deviceRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TJc-gD-rC9">
-                            <size key="itemSize" width="160" height="220"/>
+                            <size key="itemSize" width="160" height="160"/>
                             <size key="headerReferenceSize" width="50" height="38"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="15" maxX="5" maxY="40"/>
+                            <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="75"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="report" id="xc3-lK-QSX">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="158"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5H3-n4-FyJ">
@@ -412,6 +412,9 @@
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <color key="textColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.68627452850000004" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="19" y="89" width="123" height="22"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -431,7 +434,7 @@
                                         <variation key="widthClass=compact" constant="14"/>
                                     </constraint>
                                 </constraints>
-                                <size key="customSize" width="160" height="220"/>
+                                <size key="customSize" width="160" height="158"/>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="5H3-n4-FyJ"/>
@@ -461,7 +464,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaQ-OL-KRc">
@@ -490,7 +493,7 @@
                                     </constraint>
                                     <constraint firstAttribute="centerX" secondItem="TaQ-OL-KRc" secondAttribute="centerX" id="zlA-dz-c6v"/>
                                 </constraints>
-                                <size key="customSize" width="160" height="220"/>
+                                <size key="customSize" width="160" height="160"/>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="TaQ-OL-KRc"/>
@@ -521,11 +524,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="240" height="38"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Reports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H87-XC-pvO">
+                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Reports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H87-XC-pvO">
                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.13531138000000001" green="0.1353073269" blue="0.13530962169999999" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="70" y="9" width="100" height="21"/>
+                                    </variation>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.13531138000000001" green="0.1353073269" blue="0.13530962169999999" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
@@ -691,7 +697,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xl-9x-Spm">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xl-9x-Spm">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -938,6 +944,10 @@
                         </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="descriptionText" destination="0Xl-9x-Spm" id="FDN-qF-5ku"/>
+                        <outlet property="nameText" destination="G3C-sz-AtC" id="pkF-tW-7Kw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0k-eI-HVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

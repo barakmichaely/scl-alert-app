@@ -11,9 +11,21 @@ import UIKit
 class ReportView: UIViewController {
     
     var report = NSMutableDictionary()
+    var editable = true
+    
+    @IBOutlet var nameText: UITextField!
+    @IBOutlet var descriptionText: UITextView!
     
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        
+        if (editable == false) {
+            nameText.alpha = 0.7
+            descriptionText.alpha = 0.7
+            
+            nameText.userInteractionEnabled = false
+            descriptionText.userInteractionEnabled = false
+        }
 
     }
 

@@ -18,7 +18,9 @@ class MoreView: UIViewController {
     }
     
     @IBAction func policyButton(sender: AnyObject) {
+        var policyView = UIStoryboard(name: "Policy", bundle: nil).instantiateInitialViewController() as! UIViewController
         
+        self.navigationController?.showViewController(policyView, sender: self)
     }
     
     
