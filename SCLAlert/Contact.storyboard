@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2mM-KF-nXk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Collection Test-->
+        <scene sceneID="gO8-Fp-MvR">
+            <objects>
+                <collectionViewController id="wMw-aA-r1Z" customClass="CollectionTest" customModule="SCLAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4xV-2i-IbH">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Ap-ii-ISc">
+                            <size key="itemSize" width="160" height="160"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contact" id="k4o-ZI-qJD">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et5-Ed-L1H">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="et5-Ed-L1H" secondAttribute="centerY" constant="-1.5" id="IkC-dq-wnk">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="centerX" secondItem="et5-Ed-L1H" secondAttribute="centerX" constant="17" id="yH6-Bq-l6C">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                </constraints>
+                                <size key="customSize" width="180" height="180"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="et5-Ed-L1H"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="IkC-dq-wnk"/>
+                                        <exclude reference="yH6-Bq-l6C"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="et5-Ed-L1H"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="IkC-dq-wnk"/>
+                                        <include reference="yH6-Bq-l6C"/>
+                                    </mask>
+                                </variation>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="plus" id="hPw-bh-BZd">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ Add Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7w-IU-Uso">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="0.16" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="d7w-IU-Uso" secondAttribute="centerX" constant="-8" id="Jo8-KP-FeB">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="centerY" secondItem="d7w-IU-Uso" secondAttribute="centerY" id="TnX-ly-Hh4"/>
+                                </constraints>
+                                <size key="customSize" width="180" height="180"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="d7w-IU-Uso"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="Jo8-KP-FeB"/>
+                                        <exclude reference="TnX-ly-Hh4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="d7w-IU-Uso"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="Jo8-KP-FeB"/>
+                                        <include reference="TnX-ly-Hh4"/>
+                                    </mask>
+                                </variation>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jWh-aV-CgO">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="wMw-aA-r1Z" id="TE2-hN-r3W"/>
+                            <outlet property="delegate" destination="wMw-aA-r1Z" id="uhC-df-SVC"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pn2-61-YDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1930.5" y="207"/>
+        </scene>
+        <!--Edit Contact-->
+        <scene sceneID="uUs-SR-Ozc">
+            <objects>
+                <viewController storyboardIdentifier="editContact" id="mb0-5I-I8t" customClass="EditContact" customModule="SCLAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7CL-SD-a6I"/>
+                        <viewControllerLayoutGuide type="bottom" id="zdZ-5b-nIN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hxJ-Hb-eeH">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Friend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgu-2Q-5P3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dgu-2Q-5P3" firstAttribute="top" secondItem="7CL-SD-a6I" secondAttribute="bottom" constant="86" id="QW8-zX-bZp">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="Dgu-2Q-5P3" secondAttribute="centerX" constant="-17.5" id="rJB-oi-8H3">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Dgu-2Q-5P3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="QW8-zX-bZp"/>
+                                <exclude reference="rJB-oi-8H3"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Dgu-2Q-5P3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="QW8-zX-bZp"/>
+                                <include reference="rJB-oi-8H3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2O-Tw-JBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644.5" y="222"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="WGI-9Y-hGO">
+            <objects>
+                <viewController id="2mM-KF-nXk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gwY-pF-jji"/>
+                        <viewControllerLayoutGuide type="bottom" id="NW0-T3-JW3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lDp-98-rEb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-jA-uKm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <segue destination="wMw-aA-r1Z" kind="embed" id="XcA-WK-mvs"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hNg-jA-uKm" secondAttribute="centerX" constant="-3" id="9Jf-uP-Uxd">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="hNg-jA-uKm" firstAttribute="top" secondItem="gwY-pF-jji" secondAttribute="bottom" constant="51" id="GK6-3Z-gLb">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="width" secondItem="hNg-jA-uKm" secondAttribute="width" id="dNM-PX-Eb6"/>
+                            <constraint firstItem="NW0-T3-JW3" firstAttribute="top" secondItem="hNg-jA-uKm" secondAttribute="bottom" constant="151" id="q2E-Tj-w4E">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hNg-jA-uKm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9Jf-uP-Uxd"/>
+                                <exclude reference="GK6-3Z-gLb"/>
+                                <exclude reference="dNM-PX-Eb6"/>
+                                <exclude reference="q2E-Tj-w4E"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hNg-jA-uKm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9Jf-uP-Uxd"/>
+                                <include reference="GK6-3Z-gLb"/>
+                                <include reference="dNM-PX-Eb6"/>
+                                <include reference="q2E-Tj-w4E"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="UVb-fc-wy9">
+                        <barButtonItem key="backBarButtonItem" title="Contacts" id="a9k-EP-K0j"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIu-8A-tvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5" y="222"/>
+        </scene>
+    </scenes>
+</document>

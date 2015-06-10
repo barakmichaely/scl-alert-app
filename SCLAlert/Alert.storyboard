@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2iZ-v0-DyN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View-->
+        <scene sceneID="jh7-lU-Jg6">
+            <objects>
+                <viewController id="2iZ-v0-DyN" customClass="AlertView" customModule="SCLAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lql-wv-UG9"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Oa-jb-WIT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LTa-SQ-UQw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-AD-GPM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="kMc-mz-eIE">
+                                        <variation key="widthClass=compact" constant="160"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="40" id="yww-da-Xrl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <state key="normal" title="Cancel Alert">
+                                    <color key="titleColor" red="0.94901967050000002" green="0.36862745879999997" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kMc-mz-eIE"/>
+                                        <exclude reference="yww-da-Xrl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="kMc-mz-eIE"/>
+                                        <include reference="yww-da-Xrl"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Og-vL-faW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldb-qS-Hbr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sy-q4-b4R">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.94901967050000002" green="0.36862745879999997" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="192" id="8uY-U8-bJi">
+                                                <variation key="widthClass=compact" constant="160"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="63" id="fMj-xw-en0"/>
+                                            <constraint firstAttribute="height" constant="40" id="qHe-NV-Xeb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                        <state key="normal" title="Send Alert!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8uY-U8-bJi"/>
+                                                <exclude reference="fMj-xw-en0"/>
+                                                <exclude reference="qHe-NV-Xeb"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="8uY-U8-bJi"/>
+                                                <include reference="fMj-xw-en0"/>
+                                                <exclude reference="qHe-NV-Xeb"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1Sy-q4-b4R" firstAttribute="width" secondItem="ldb-qS-Hbr" secondAttribute="width" id="5lZ-mx-PVn">
+                                        <variation key="widthClass=compact" constant="-14"/>
+                                    </constraint>
+                                    <constraint firstAttribute="centerX" secondItem="1Sy-q4-b4R" secondAttribute="centerX" constant="-6" id="ACZ-OL-bUc">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="303" id="G7d-fo-G7O"/>
+                                    <constraint firstItem="1Sy-q4-b4R" firstAttribute="width" secondItem="ldb-qS-Hbr" secondAttribute="width" id="Jlc-bn-Juq">
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="1Sy-q4-b4R" secondAttribute="bottom" constant="8" id="MPe-Gu-UnP">
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="1Sy-q4-b4R"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="G7d-fo-G7O"/>
+                                        <exclude reference="5lZ-mx-PVn"/>
+                                        <exclude reference="ACZ-OL-bUc"/>
+                                        <exclude reference="Jlc-bn-Juq"/>
+                                        <exclude reference="MPe-Gu-UnP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="1Sy-q4-b4R"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="G7d-fo-G7O"/>
+                                        <include reference="5lZ-mx-PVn"/>
+                                        <include reference="ACZ-OL-bUc"/>
+                                        <exclude reference="Jlc-bn-Juq"/>
+                                        <include reference="MPe-Gu-UnP"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901967050000002" green="0.36862745879999997" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ldb-qS-Hbr" secondAttribute="centerY" constant="0.5" id="7XF-tt-VYK">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="1Og-vL-faW" secondAttribute="centerX" constant="-0.5" id="GFl-KM-l6z">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="ldb-qS-Hbr" firstAttribute="width" secondItem="LTa-SQ-UQw" secondAttribute="width" id="Orb-ch-nXj">
+                                <variation key="widthClass=compact" constant="-30"/>
+                            </constraint>
+                            <constraint firstItem="1Og-vL-faW" firstAttribute="top" secondItem="lql-wv-UG9" secondAttribute="bottom" constant="28" id="UfA-fD-fiU">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="1Oa-jb-WIT" firstAttribute="top" secondItem="kpe-AD-GPM" secondAttribute="bottom" constant="20" id="dxL-PA-Mwd">
+                                <variation key="widthClass=compact" constant="25"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="ldb-qS-Hbr" secondAttribute="centerX" id="pjH-BL-Aln"/>
+                            <constraint firstAttribute="centerX" secondItem="kpe-AD-GPM" secondAttribute="centerX" id="wgE-fJ-bC6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kpe-AD-GPM"/>
+                                <exclude reference="1Og-vL-faW"/>
+                                <exclude reference="ldb-qS-Hbr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="GFl-KM-l6z"/>
+                                <exclude reference="UfA-fD-fiU"/>
+                                <exclude reference="7XF-tt-VYK"/>
+                                <exclude reference="Orb-ch-nXj"/>
+                                <exclude reference="pjH-BL-Aln"/>
+                                <exclude reference="wgE-fJ-bC6"/>
+                                <exclude reference="dxL-PA-Mwd"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kpe-AD-GPM"/>
+                                <include reference="1Og-vL-faW"/>
+                                <include reference="ldb-qS-Hbr"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="GFl-KM-l6z"/>
+                                <include reference="UfA-fD-fiU"/>
+                                <include reference="7XF-tt-VYK"/>
+                                <include reference="Orb-ch-nXj"/>
+                                <include reference="pjH-BL-Aln"/>
+                                <include reference="wgE-fJ-bC6"/>
+                                <include reference="dxL-PA-Mwd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="spO-Er-CwE">
+                        <barButtonItem key="backBarButtonItem" title=" " id="99U-xG-j5z"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="cancelAlertButton" destination="kpe-AD-GPM" id="xh6-fC-Dge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bkc-ZN-LcF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="154"/>
+        </scene>
+    </scenes>
+</document>
