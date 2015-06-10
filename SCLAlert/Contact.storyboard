@@ -192,16 +192,42 @@
                                     <segue destination="wMw-aA-r1Z" kind="embed" id="XcA-WK-mvs"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These people will be notified when you send an Emergency Alert" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmi-H5-iR9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="r7S-Fh-Eus"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="r7S-Fh-Eus"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="99" y="21" width="224" height="43"/>
+                                    <mask key="constraints">
+                                        <include reference="r7S-Fh-Eus"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="hNg-jA-uKm" secondAttribute="centerX" constant="-3" id="9Jf-uP-Uxd">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="jmi-H5-iR9" firstAttribute="top" secondItem="gwY-pF-jji" secondAttribute="bottom" constant="1" id="Cqs-Dq-wLI">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="hNg-jA-uKm" firstAttribute="top" secondItem="gwY-pF-jji" secondAttribute="bottom" constant="51" id="GK6-3Z-gLb">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="70"/>
                             </constraint>
                             <constraint firstAttribute="width" secondItem="hNg-jA-uKm" secondAttribute="width" id="dNM-PX-Eb6"/>
+                            <constraint firstAttribute="centerX" secondItem="jmi-H5-iR9" secondAttribute="centerX" constant="-0.5" id="gqh-Vu-2pG">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="NW0-T3-JW3" firstAttribute="top" secondItem="hNg-jA-uKm" secondAttribute="bottom" constant="151" id="q2E-Tj-w4E">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -209,23 +235,29 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hNg-jA-uKm"/>
+                                <exclude reference="jmi-H5-iR9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="q2E-Tj-w4E"/>
                                 <exclude reference="9Jf-uP-Uxd"/>
                                 <exclude reference="GK6-3Z-gLb"/>
                                 <exclude reference="dNM-PX-Eb6"/>
+                                <exclude reference="Cqs-Dq-wLI"/>
+                                <exclude reference="gqh-Vu-2pG"/>
+                                <exclude reference="q2E-Tj-w4E"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="hNg-jA-uKm"/>
+                                <include reference="jmi-H5-iR9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="q2E-Tj-w4E"/>
                                 <include reference="9Jf-uP-Uxd"/>
                                 <include reference="GK6-3Z-gLb"/>
                                 <include reference="dNM-PX-Eb6"/>
+                                <include reference="Cqs-Dq-wLI"/>
+                                <include reference="gqh-Vu-2pG"/>
+                                <include reference="q2E-Tj-w4E"/>
                             </mask>
                         </variation>
                     </view>

@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-147" y="154"/>
         </scene>
-        <!--Main View-->
+        <!--Pace Alert App-->
         <scene sceneID="CH8-GD-y9l">
             <objects>
                 <viewController id="Zzg-hN-y4E" customClass="MainView" customModule="SCLAlert" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,8 +147,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="gAP-RA-iAQ">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Ie5-OX-ZIo"/>
+                    <navigationItem key="navigationItem" title="Pace Alert App" id="gAP-RA-iAQ">
+                        <barButtonItem key="backBarButtonItem" title="  " id="Ie5-OX-ZIo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="alertButton" destination="5ZD-FE-DbL" id="sY0-hz-Y7h"/>

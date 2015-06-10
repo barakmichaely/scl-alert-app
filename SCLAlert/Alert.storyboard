@@ -43,12 +43,6 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Og-vL-faW">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldb-qS-Hbr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -124,20 +118,44 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only send in case of extreme emergency" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daz-1s-aeY">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="PUh-9h-37v"/>
+                                    <constraint firstAttribute="width" constant="142" id="lAr-X4-Tsg">
+                                        <variation key="widthClass=compact" constant="150"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PUh-9h-37v"/>
+                                        <exclude reference="lAr-X4-Tsg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="PUh-9h-37v"/>
+                                        <include reference="lAr-X4-Tsg"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901967050000002" green="0.36862745879999997" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
+                            <constraint firstItem="Daz-1s-aeY" firstAttribute="top" secondItem="lql-wv-UG9" secondAttribute="bottom" constant="41" id="1Ps-OP-1RB">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstAttribute="centerY" secondItem="ldb-qS-Hbr" secondAttribute="centerY" constant="0.5" id="7XF-tt-VYK">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstAttribute="centerX" secondItem="1Og-vL-faW" secondAttribute="centerX" constant="-0.5" id="GFl-KM-l6z">
+                            <constraint firstAttribute="centerX" secondItem="Daz-1s-aeY" secondAttribute="centerX" constant="-0.5" id="Njz-gh-oA4">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="ldb-qS-Hbr" firstAttribute="width" secondItem="LTa-SQ-UQw" secondAttribute="width" id="Orb-ch-nXj">
                                 <variation key="widthClass=compact" constant="-30"/>
-                            </constraint>
-                            <constraint firstItem="1Og-vL-faW" firstAttribute="top" secondItem="lql-wv-UG9" secondAttribute="bottom" constant="28" id="UfA-fD-fiU">
-                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="1Oa-jb-WIT" firstAttribute="top" secondItem="kpe-AD-GPM" secondAttribute="bottom" constant="20" id="dxL-PA-Mwd">
                                 <variation key="widthClass=compact" constant="25"/>
@@ -148,33 +166,33 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="kpe-AD-GPM"/>
-                                <exclude reference="1Og-vL-faW"/>
                                 <exclude reference="ldb-qS-Hbr"/>
+                                <exclude reference="Daz-1s-aeY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dxL-PA-Mwd"/>
-                                <exclude reference="GFl-KM-l6z"/>
-                                <exclude reference="UfA-fD-fiU"/>
-                                <exclude reference="wgE-fJ-bC6"/>
+                                <exclude reference="1Ps-OP-1RB"/>
+                                <exclude reference="Njz-gh-oA4"/>
                                 <exclude reference="7XF-tt-VYK"/>
                                 <exclude reference="Orb-ch-nXj"/>
                                 <exclude reference="pjH-BL-Aln"/>
+                                <exclude reference="wgE-fJ-bC6"/>
+                                <exclude reference="dxL-PA-Mwd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="kpe-AD-GPM"/>
-                                <include reference="1Og-vL-faW"/>
                                 <include reference="ldb-qS-Hbr"/>
+                                <include reference="Daz-1s-aeY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dxL-PA-Mwd"/>
-                                <include reference="GFl-KM-l6z"/>
-                                <include reference="UfA-fD-fiU"/>
-                                <include reference="wgE-fJ-bC6"/>
+                                <include reference="1Ps-OP-1RB"/>
+                                <include reference="Njz-gh-oA4"/>
                                 <include reference="7XF-tt-VYK"/>
                                 <include reference="Orb-ch-nXj"/>
                                 <include reference="pjH-BL-Aln"/>
+                                <include reference="wgE-fJ-bC6"/>
+                                <include reference="dxL-PA-Mwd"/>
                             </mask>
                         </variation>
                     </view>
