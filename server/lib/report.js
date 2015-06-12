@@ -52,7 +52,7 @@ module.exports = {
 };
 function  getGoogleMapLink(location) {
       
-        return "https://www.google.com/maps/place/" +"/@" +location[0].toString() +","+location[1].toString()+ ",18z/data=!4m2!3m1!1s0x0:0x0";
+        return "https://www.google.com/maps/place/" +"/@" + location.toString() + ",18z/data=!4m2!3m1!1s0x0:0x0";
 
 }
 
