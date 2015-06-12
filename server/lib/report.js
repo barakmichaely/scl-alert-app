@@ -59,7 +59,7 @@ function  getGoogleMapLink(location) {
 function email(emailTextSubject, emailTextBody) {
     postmark.send({
         "From": "bm09148n@pace.edu",
-        "To": "hanastanojkovic@gmail.com",
+        "To": "barbarianmike15@gmail.com",
         "Subject": ''+emailTextSubject+'',
         "TextBody": '' + emailTextBody + '',
         "Tag": "Important"
