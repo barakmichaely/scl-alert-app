@@ -13,36 +13,17 @@ module.exports = {
     },
 
     report: function(data) {
-        // assume data received will be formatted in this order.
         //{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}  
         var subjectLine = "Sexual Harrassment Report!"
-
-        var reportObjectArray = [];
-
-        for (var key in data) {
-            reportObjectArray.push(data[key].toString());
-            // try formatting here 
-        }
-
-        var emailTextBody = "Name: " + reportObjectArray[0] + "\n" + "Date of Incident: " + reportObjectArray[1] + "\n" + "Time of Incident: " + reportObjectArray[2] + "\n\n" + reportObjectArray[3];
+        var emailTextBody = "Name: " + data["name"] + "\n" + "Date of Incident: " + data["date"] + "\n" + "Time of Incident: " + data["time"] + "\n\n" + data["report"];
 
         email(subjectLine, emailTextBody);
 
         return "This is the Report page";
     },
     alert: function(data) {
-
-        // assume data received will be formatted in the order of "testalert"
-
         var subjectLine = "Sexual Harrassment Alert!"
-
-        var alertObjectArray = [];
-        for (var key in data) {
-            alertObjectArray.push(data[key]);
-        }
-
-        var alertData = alertObjectArray[0] + " is in trouble!" + "\n" + "Alert sent from this location: " + getGoogleMapLink(alertObjectArray[1]) + "\n" + "at " + alertObjectArray[3] + " on " + alertObjectArray[2] + "\n" + "If you can, try to reach out to " + alertObjectArray[0] + " or alert the authorities.";
-
+        var alertData = data["name"] + " is in trouble!" + "\n" + "Alert sent from this location: " + getGoogleMapLink(data["location"]) + "\n" + "at " + data["time"] + " on " + data["date"] + "\n" + "If you can, try to reach out to " + data["name"] + " or alert the authorities.";
 
         email(subjectLine, alertData);
 
