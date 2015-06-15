@@ -6,6 +6,8 @@ var postmark = require("postmark")('f8536579-7284-4950-9e3d-977cc96332d0');
 var list = [];
 var code;
 var counter = 0;
+// It's Hana's email by default for testing purposes. If someone else is testing, change the default email to your own please.
+var recipient = "hanastanojkovic@gmail.com";
 
 module.exports = {    
   // below is temporary alert stored in a variable
@@ -16,7 +18,9 @@ module.exports = {
         "time": "3:34PM",
         "contacts": ["1234567890", "1234567890", "1234567890", "1234567890", "1234567890"]
     },
-
+    changeRecipient : function(newEmail){
+      recipient = newEmail;
+    },
     report: function(data) {
         // assume data received will be formatted in this order.
         //{"name":"barak","date":"Jun 11th 2013","time":"3:12PM","report":"blahblahblahblahblahblahblahblahblah"}  
@@ -29,7 +33,7 @@ module.exports = {
 
         var reportData = "Name: " + reportObjectArray[0] + "\n" + "Date of Incident: " + reportObjectArray[1] + "\n" + "Time of Incident: " + reportObjectArray[2] + "\n\n" + reportObjectArray[3];
 
-        email(subjectLine, reportData);
+        email(recipient, subjectLine, reportData);
 
         return "This is the Report page";
     },
@@ -46,7 +50,7 @@ module.exports = {
         var alertData = alertObjectArray[0] + " is in trouble!" + "\n" + "Alert sent from this location: " + getGoogleMapLink(alertObjectArray[1]) + "\n" + "at " + alertObjectArray[3] + " on " + alertObjectArray[2] + "\n" + "If you can, try to reach out to " + alertObjectArray[0] + " or alert the authorities.";
 
 
-        email(subjectLine, alertData);
+        email(recipient, subjectLine, alertData);
 
         // because SMS is not set up, this formatted data currently has no where to go. 
         return alertData;
@@ -135,10 +139,10 @@ function sendCode(list){
     });
 }
 
-function email(emailTextSubject, emailTextBody) {
+function email(recipient,emailTextSubject, emailTextBody) {
     postmark.send({
         "From": "bm09148n@pace.edu",
-        "To": "hanastanojkovic@gmail.com",
+        "To": ''+recipient+'',
         "Subject": ''+emailTextSubject+'',
         "TextBody": '' + emailTextBody + '',
         "Tag": "Important"

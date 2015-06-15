@@ -1,6 +1,7 @@
 ////////
 // SETUP
 ////////
+
 // Import the 'express' module
 var express = require('express'),
     app = express(),
@@ -42,12 +43,9 @@ app.get('/whitepages', function(req, res) {
 
 // (Verification Step 1) (SIGN UP) This Request is asking for a @pace.edu email to be entered 
 app.post('/verification/:email',function(req, res){
-	
 	try{
 		var receivedEmail = req.params.email;
-
 		report.checkEmail(receivedEmail);
-
 		res.send(200);}
 	catch(e){
 		console.log("Invalid Error");
@@ -58,7 +56,6 @@ app.post('/verification/:email',function(req, res){
 
 // (Verification Step 5) (VERIFY USER) This Request is asking for the code sent to the email to be entered
 app.post('/verification/:email/:code',function(req, res){
-	
 		var receivedCode = req.params.code;
 		var receivedEmail = req.params.email;
 
@@ -70,11 +67,9 @@ app.post('/verification/:email/:code',function(req, res){
 		}
 });
 
-// Respond to a GET Request at address 'localhost:8080/report/:data' with a message
+// Respond to a POST Request at address '/report/:data' 
 app.post('/report/:data', function(req, res) {
-
-    // type stuff like below
-    //{"name":"evan","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
+    // Example : {"name":"evan","date":"Jun 11th 2013","time":"3:12 PM","report":"text"}
     try {
         var parsedData = JSON.parse(req.params.data);
 
@@ -87,20 +82,32 @@ app.post('/report/:data', function(req, res) {
 
 });
 
-// FIX THIS FUNCTION SO IT ISN'T JUST FOR TESTING PURPOSES! 
-
+// Respond to a POST Request at address '/alert/:data'
 app.post('/alert/:data', function(req, res) {
 
-// use this for testing purposes
+// Testing Purposes, /alert/test
 	if (req.params.data == "test") {
     	report.alert(report.testalert);
 	}
-// the else is for actual data passed in 
+// the else is for actual data passed in. Make sure encoding of the URL is correct.
+// Example: {"name":"eiman","location":[40.7134519,-74.003797],"date":"04.09.2015","time":"3:34PM","contacts":["Phone Number 1","Phone Number 2","Phone Number 3","Phone Number 4","Phone Number 5"]}
 	else {
    		report.alert(JSON.parse(req.params.data));
    	}
 
     res.send(200);
+});
+
+// Respond to a POST Request at address '/changeRecievingEmailTo/:data'
+app.post('/changeRecievingEmailTo/:data', function(req,res){
+	if (req.params.data.indexOf("@")!=-1){
+	var email = req.params.data;
+	report.changeRecipient(email);
+	res.send(200);
+	}
+	else {
+		res.send(400);
+	}
 });
 
 // Respond to a GET request at address 'localhost:8080/info' with a file
