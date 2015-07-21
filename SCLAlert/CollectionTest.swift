@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import AddressBook
+import AddressBookUI
 
 
+class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationControllerDelegate {
 
-class CollectionTest: UICollectionViewController {
-
-    var itemAmount:Int = 0
     let limit:Int = 8
+    var contactsArray = Array<Dictionary<String, String>>()
+    let nameKey = "name"
+    let phoneKey = "phone"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,62 @@ class CollectionTest: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func showPicker() {
+        
+        let picker = ABPeoplePickerNavigationController()
+        picker.peoplePickerDelegate = self
+        
+        picker.displayedProperties = [Int(kABPersonPhoneProperty)];
+        
+        picker.predicateForEnablingPerson = NSPredicate(format: "phoneNumbers.@count > 0")
+        
+        picker.predicateForSelectionOfPerson = NSPredicate(format: "phoneNumbers.@count = 1")
+
+//            [NSPredicate predicateWithFormat:@"emailAddresses.@count > 0"];
+
+        
+        self.presentViewController(picker, animated: true, completion: nil)
+        
+    }
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
+        
+        let contactNameString = ABRecordCopyCompositeName(person).takeRetainedValue() as String
+        
+        
+        didSelectContactWithName(contactNameString, phone: "NA")
+        
+        
+        //add this contact to the respective table view cell here
+        // save the info (contact name and phone number permanently)
+    }
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
+        
+        let contactNameString = ABRecordCopyCompositeName(person).takeRetainedValue() as String
+        didSelectContactWithName(contactNameString, phone: "NA")
+
+    }
+    
+    func didSelectContactWithName(name : String, phone : String) {
+        contactsArray.append([nameKey : name, phoneKey : phone])
+        
+        collectionView?.reloadData()
+
+    }
+    
+//    func convertCFStringToString(cfString: Unmanaged<AnyObject>!) -> String? {
+//        let value = Unmanaged<CFStringRef>.fromOpaque(cfValue.toOpaque()).takeUnre
+//    }
+    
+//    
+//    // A selected person is returned with this method.
+//    - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person
+//    {
+//    NSString *contactName = CFBridgingRelease(ABRecordCopyCompositeName(person));
+//    self.resultLabel.text = [NSString stringWithFormat:@"Picked %@", contactName ? contactName : @"No Name"];
+//    }
 
     /*
     // MARK: - Navigation
@@ -49,10 +108,10 @@ class CollectionTest: UICollectionViewController {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (itemAmount == limit) {
-            return itemAmount
+        if (contactsArray.count == limit) {
+            return contactsArray.count
         }
-        return itemAmount + 1
+        return contactsArray.count + 1
     }
 
     
@@ -61,11 +120,18 @@ class CollectionTest: UICollectionViewController {
         let row = indexPath.row
         var cellID = "contact"
         
-        if (row == self.itemAmount && self.itemAmount<limit) {
+        if (row == self.contactsArray.count && self.contactsArray.count<limit) {
             cellID = "plus"
         }
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! UICollectionViewCell
+        
+        if cell.isKindOfClass(ContactCell) {
+            let contactCell = cell as! ContactCell
+            let contact = contactsArray[indexPath.item]
+            contactCell.nameLabel.text = contact[nameKey]
+            contactCell.phoneLabel.text = contact[phoneKey]
+        }
     
         cell.layer.cornerRadius = 80
         cell.layer.masksToBounds = true
@@ -76,17 +142,24 @@ class CollectionTest: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if (indexPath.row == self.itemAmount) {
+        if (indexPath.row == self.contactsArray.count) {
             // Create New Contact
-            self.itemAmount += 1
+            showPicker()
+            
+//            self.itemAmount += 1
             collectionView.reloadData()
 //            collectionView.performBatchUpdates({
 //            }, completion: {b in })
             
         } else {
             // Edit Contact
-            var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
-            self.showViewController(contactView, sender: self)
+//HERE            showPicker()
+            
+            //display new contact in respective table view cell
+            //save new contact (keep when app closes)
+//            
+//            var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
+//            self.showViewController(contactView, sender: self)
         }
         
     }

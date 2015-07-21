@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3E5C571B5D99C300C6B9E0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3E5C561B5D99C300C6B9E0 /* AddressBook.framework */; };
+		2B3E5C591B5DBF0900C6B9E0 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3E5C581B5DBF0900C6B9E0 /* ContactCell.swift */; };
 		E51896861B24FE5A00D02870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51896851B24FE5A00D02870 /* AppDelegate.swift */; };
 		E518968C1B2506BD00D02870 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E518968B1B2506BD00D02870 /* MainView.swift */; };
 		E518968E1B251D6200D02870 /* ReportMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E518968D1B251D6100D02870 /* ReportMainView.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3E5C561B5D99C300C6B9E0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2B3E5C581B5DBF0900C6B9E0 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		E51896851B24FE5A00D02870 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E518968B1B2506BD00D02870 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E518968D1B251D6100D02870 /* ReportMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportMainView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3E5C571B5D99C300C6B9E0 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +118,7 @@
 		E5DE12F41B24E2D50011E954 = {
 			isa = PBXGroup;
 			children = (
+				2B3E5C561B5D99C300C6B9E0 /* AddressBook.framework */,
 				E5DE12FF1B24E2D50011E954 /* SCLAlert */,
 				E5DE13151B24E2D50011E954 /* SCLAlertTests */,
 				E5DE12FE1B24E2D50011E954 /* Products */,
@@ -200,6 +206,7 @@
 		E5DE133B1B24E7780011E954 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				2B3E5C581B5DBF0900C6B9E0 /* ContactCell.swift */,
 				E5DE13041B24E2D50011E954 /* ViewController.swift */,
 				E5DE132F1B24E5A10011E954 /* CollectionTest.swift */,
 				E589C2CF1B24E9D0002661E3 /* Navigation.swift */,
@@ -332,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3E5C591B5DBF0900C6B9E0 /* ContactCell.swift in Sources */,
 				E51896861B24FE5A00D02870 /* AppDelegate.swift in Sources */,
 				E518968C1B2506BD00D02870 /* MainView.swift in Sources */,
 				E5DE13321B24E5A10011E954 /* CollectionTest.swift in Sources */,
@@ -483,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SCLAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -493,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SCLAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
