@@ -20,6 +20,13 @@ class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let loadedContacts = NSUserDefaults().arrayForKey("myContacts") as? [[String:AnyObject]] {
+            
+            for item in loadedContacts {
+                didSelectContactWithName(item[nameKey] as! String, phone: item[phoneKey] as! String)
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,10 +49,9 @@ class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationContro
         
         picker.predicateForEnablingPerson = NSPredicate(format: "phoneNumbers.@count > 0")
         
+        //picker.predicateForEnablingPeron = ONLY IF NOT ALREADY IN ARRAY
+        
         picker.predicateForSelectionOfPerson = NSPredicate(format: "phoneNumbers.@count = 1")
-
-//            [NSPredicate predicateWithFormat:@"emailAddresses.@count > 0"];
-
         
         self.presentViewController(picker, animated: true, completion: nil)
         
@@ -55,49 +61,60 @@ class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationContro
         
         let contactNameString = ABRecordCopyCompositeName(person).takeRetainedValue() as String
         
+        var phoneNumber = "N/A"
+        let phoneNumbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
+        phoneNumber = ABMultiValueCopyValueAtIndex(phoneNumbers, 0).takeRetainedValue() as! String
         
-        didSelectContactWithName(contactNameString, phone: "NA")
+        didSelectContactWithName(contactNameString, phone: phoneNumber)
         
-        
-        //add this contact to the respective table view cell here
-        // save the info (contact name and phone number permanently)
+        //save contact persistently
+
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
         
         let contactNameString = ABRecordCopyCompositeName(person).takeRetainedValue() as String
-        didSelectContactWithName(contactNameString, phone: "NA")
+        
+        var phoneNumber = "N/A"
+        let phoneNumbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue() as ABMultiValueRef
+        
+        let countOfPhones = ABMultiValueGetCount(phoneNumbers)
+        
+        if (countOfPhones > 0) {
+            var index = CFIndex(0)
+            if identifier != kABMultiValueInvalidIdentifier {
+                index = ABMultiValueGetIndexForIdentifier(phoneNumbers, identifier)
+            }
+            phoneNumber = ABMultiValueCopyValueAtIndex(phoneNumbers, index).takeRetainedValue() as! String
+        }
+        
+        didSelectContactWithName(contactNameString, phone: phoneNumber)
 
     }
     
     func didSelectContactWithName(name : String, phone : String) {
+
+        for var i = 0; i < contactsArray.count; i++ {
+            if (contactsArray[i][nameKey] == name) && (contactsArray[i][phoneKey] == phone) {
+                //should not be able to select same contact
+                //Alert currently not displaying (error: view is not in the window hierarchy)
+                let alert = UIAlertController(title: "Alert", message: "The person is already in your list.", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+        }
+        
         contactsArray.append([nameKey : name, phoneKey : phone])
+        
+        NSUserDefaults().setObject(contactsArray, forKey: "myContacts") //save contacts persistently
+        
         
         collectionView?.reloadData()
 
     }
-    
-//    func convertCFStringToString(cfString: Unmanaged<AnyObject>!) -> String? {
-//        let value = Unmanaged<CFStringRef>.fromOpaque(cfValue.toOpaque()).takeUnre
-//    }
-    
-//    
-//    // A selected person is returned with this method.
-//    - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person
-//    {
-//    NSString *contactName = CFBridgingRelease(ABRecordCopyCompositeName(person));
-//    self.resultLabel.text = [NSString stringWithFormat:@"Picked %@", contactName ? contactName : @"No Name"];
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -152,11 +169,15 @@ class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationContro
 //            }, completion: {b in })
             
         } else {
-            // Edit Contact
-//HERE            showPicker()
+            // Remove Contact
+            //INSERT ALERT VIEW OR SOMETHING TO ASK WHETHER CONTACT SHOULD BE REMOVED
+            //"Do you want to remove the contact form your list?"
+            //IF REALLY WANT TO REMOVE:
+            contactsArray.removeAtIndex(indexPath.item)
+            collectionView.reloadData()
             
-            //display new contact in respective table view cell
-            //save new contact (keep when app closes)
+            //showpicker() //-> if want to enable selection of different contact instead
+
 //            
 //            var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
 //            self.showViewController(contactView, sender: self)
@@ -174,7 +195,7 @@ class CollectionTest: UICollectionViewController, ABPeoplePickerNavigationContro
     */
 
     /*
-    // Uncomment this method to specify if the specified item should be selected
+    //Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }

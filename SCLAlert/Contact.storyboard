@@ -61,12 +61,12 @@
                                         <exclude reference="OoS-fw-NDc"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="9zy-KC-tOB"/>
+                                        <exclude reference="rdc-I1-qpi"/>
                                         <exclude reference="IkC-dq-wnk"/>
                                         <exclude reference="gDG-ea-7Zo"/>
                                         <exclude reference="w6n-9L-P9p"/>
                                         <exclude reference="yH6-Bq-l6C"/>
-                                        <exclude reference="9zy-KC-tOB"/>
-                                        <exclude reference="rdc-I1-qpi"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -75,12 +75,12 @@
                                         <include reference="OoS-fw-NDc"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="9zy-KC-tOB"/>
+                                        <include reference="rdc-I1-qpi"/>
                                         <include reference="IkC-dq-wnk"/>
                                         <include reference="gDG-ea-7Zo"/>
                                         <include reference="w6n-9L-P9p"/>
                                         <include reference="yH6-Bq-l6C"/>
-                                        <include reference="9zy-KC-tOB"/>
-                                        <include reference="rdc-I1-qpi"/>
                                     </mask>
                                 </variation>
                                 <connections>
