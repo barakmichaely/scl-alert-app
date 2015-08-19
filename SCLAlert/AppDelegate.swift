@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var data = Data()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +19,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        for (NSString* family in [UIFont familyNames])
+//        {
+//            NSLog(@"%@", family);
+//            
+//            for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//            {
+//                NSLog(@"  %@", name);
+//            }
+//        }
+        
+        for family in UIFont.familyNames(){
+            println(family)
+            for name in UIFont.fontNamesForFamilyName(family as! String) {
+                println(name)
+            }
+        }
+        
+        var d = NSMutableDictionary()
+        d.setValue("Joe", forKey: "name")
+        d.setValue("02.10.2015", forKey: "date")
+        
+        println(JSONStringify(d, prettyPrinted: false))
+        
         return true
     }
 

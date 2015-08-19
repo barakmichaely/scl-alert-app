@@ -30,9 +30,9 @@ class MainView: UIViewController {
     }
     
     func startAlert() {
-        var alertView = UIStoryboard(name: "Alert", bundle: nil).instantiateInitialViewController() as! AlertView
+        var alertView = UIStoryboard(name: "Alert", bundle: nil).instantiateInitialViewController() as! UIViewController
         
-        self.presentViewController(alertView, animated: false, completion: {})
+        self.presentViewController(alertView, animated: true, completion: {})
     }
     
     override func viewWillAppear(animated: Bool) {

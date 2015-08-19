@@ -12,17 +12,39 @@ import UIKit
 
 class CollectionTest: UICollectionViewController {
 
-    var itemAmount:Int = 0
+    var itemAmount:Int = data.contacts.count
     let limit:Int = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        itemAmount = data.contacts.count
+        self.collectionView!.reloadData()
+    }
+    
+    func newContact() {
+        // Create New Contact
+        var newContact = NSMutableDictionary()
+        data.contacts.append(newContact)
+        
+        // Edit New Contact
+        editContact(data.contacts.count-1)
+    }
+    
+    func editContact(pos:Int) {
+        // Edit Contact
+        var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
+        contactView.contactPos = pos
+        self.showViewController(contactView, sender: self)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,8 +89,10 @@ class CollectionTest: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! UICollectionViewCell
     
-        cell.layer.cornerRadius = 80
+        cell.layer.cornerRadius = cell.frame.size.width * 0.5
         cell.layer.masksToBounds = true
+        
+        (cell.viewWithTag(5) as? UILabel)?.text = (data.contacts[indexPath.row] as! NSDictionary).valueForKey("name") as! String
         
         return cell
     }
@@ -77,16 +101,9 @@ class CollectionTest: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if (indexPath.row == self.itemAmount) {
-            // Create New Contact
-            self.itemAmount += 1
-            collectionView.reloadData()
-//            collectionView.performBatchUpdates({
-//            }, completion: {b in })
-            
+            self.newContact()
         } else {
-            // Edit Contact
-            var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
-            self.showViewController(contactView, sender: self)
+            self.editContact(indexPath.row)
         }
         
     }
