@@ -6,11 +6,10 @@
 var express = require('express'),
     app = express(),
     report = require('./report'),
-    cheerio = require('cheerio'),
-    _ = require('lodash');
+    cheerio = require('cheerio');
 
 // Set the Port Number for This Server to Listen To (8080)
-app.set('port', (process.env.PORT || 8080));
+app.set('port', (process.env.PORT || 9000));
 
 ///////////
 // MAIN CODE
@@ -38,7 +37,7 @@ app.get('/whitepages', function(req, res) {
 		res.send(body) // Show the HTML for the pace whitepages. 
 	}
 	
-	})
+	});
 });
 
 // (Verification Step 1) (SIGN UP) This Request is asking for a @pace.edu email to be entered 
@@ -106,6 +105,7 @@ app.post('/changeRecievingEmailTo/:data', function(req,res){
 	res.send(200);
 	}
 	else {
+		console.log("invalid email");
 		res.send(400);
 	}
 });
@@ -119,8 +119,7 @@ app.get('/info', function(req, res) {
 // RUN SERVER
 ////////////
 
-// Start Listening at set Port (Starts Server)
+// Start Listening at set Port (Starts Server). Outputs a message in the command line.
 app.listen(app.get('port'), function() {
-    // Outputs a Message in the Command Line When the Server Has Started Listening
-    console.log("scl-alert-app is running at localhost:" + app.get('port'));
+    console.log("SCL Alert application is running at localhost on port:" + app.get('port'));
 });
