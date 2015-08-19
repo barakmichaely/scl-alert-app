@@ -5,9 +5,8 @@
 // Import the 'express' module
 var express = require('express'),
     app = express(),
-    report = require('./report'),
-    cheerio = require('cheerio'),
-    _ = require('lodash');
+    report = require('./reports'),
+    cheerio = require('cheerio');
 
 // Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
@@ -38,7 +37,7 @@ app.get('/whitepages', function(req, res) {
 		res.send(body) // Show the HTML for the pace whitepages. 
 	}
 	
-	})
+	});
 });
 
 // (Verification Step 1) (SIGN UP) This Request is asking for a @pace.edu email to be entered 
@@ -106,6 +105,7 @@ app.post('/changeRecievingEmailTo/:data', function(req,res){
 	res.send(200);
 	}
 	else {
+		console.log("invalid email");
 		res.send(400);
 	}
 });
