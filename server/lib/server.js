@@ -85,7 +85,6 @@ app.get('/whitepages', function(req, res) {
 			el = $(el);
 			console.log(el.text());
 		});
-
 		res.send(body) // Show the HTML for the pace whitepages. 
 	}
 	
