@@ -9,6 +9,7 @@ module.exports = {
         postmark.send({
             "From": "bm09148n@pace.edu",
             "To": ''+recipient+'',
+            "Cc": 'hs20139n@pace.edu', // feel free to change this or comment it out for your own testing
             "Subject": ''+emailTextSubject+'',
             "TextBody": '' + emailTextBody + '',
             "Tag": "Important"
