@@ -9,11 +9,17 @@ var express = require('express'),
     cheerio = require('cheerio'),
     _ = require('lodash');
 
+var processNewReport = require('./webreport').processNewReport;
+var processVerificationCode = require('./webreport').processVerificationCode;
+var createVerificationCode = require('./webreport').createVerificationCode;
+
 // Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
 
 // app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+
 
 ///////////
 // MAIN CODE
@@ -91,19 +97,22 @@ app.post('/webreport', function(req, res) {
     console.log('--Web Report--');
     console.log(req.body);
     console.log('--------------')
-    res.send('Sent!');
 
-    // process query
-    // var reportText = ''
-    // for (var item in req.body) {
-    //     reportText += item.toString() + ': ' + req.query[item].toString();
-    //     reportText += '  /n';
-    // }
-    //console.log(reportText);
+    processNewReport(req.body);
+    
+    res.send('Sent!');
 });
 
 app.get('/webreportverification/:code', function(req, res) {
-    // 
+    res.send('verifying...');
+    processVerificationCode(req.params.code)
+    
+
+    return;
+    console.log('doing something')
+    var code = createVerificationCode();
+
+    res.send('Code: '+code);
 });
 
 
