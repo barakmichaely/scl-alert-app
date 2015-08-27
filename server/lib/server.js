@@ -81,6 +81,27 @@ app.get('/info', function(req, res) {
     res.sendfile(__dirname + '/info.json');
 });
 
+
+// For reports sent by the website component
+app.get('/webreport', function(req, res) {
+    console.log('web report')
+    res.send(req.query);
+
+    // // type stuff like below
+    // //{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
+    // try {
+    //     var parsedData = JSON.parse(req.params.data);
+
+    //     report.report(parsedData);
+    //     res.send(200);
+    // } catch (e) {
+    //     console.log("Invalid Error");
+    //     res.send(400);
+    // }
+
+});
+
+
 ////////////
 // RUN SERVER
 ////////////
