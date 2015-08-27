@@ -4,12 +4,16 @@
 // Import the 'express' module
 var express = require('express'),
     app = express(),
+    bodyParser = require('body-parser'),
     report = require('./report'),
     cheerio = require('cheerio'),
     _ = require('lodash');
 
 // Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
+
+// app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 ///////////
 // MAIN CODE
@@ -83,25 +87,26 @@ app.get('/info', function(req, res) {
 
 
 // For reports sent by the website component
-app.get('/webreport', function(req, res) {
+app.post('/webreport', function(req, res) {
     console.log('--Web Report--');
-    console.log(req.query);
+    console.log(req.body);
     console.log('--------------')
-    res.send(req.query);
+    res.send('Sent!');
 
-    // // type stuff like below
-    // //{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
-    // try {
-    //     var parsedData = JSON.parse(req.params.data);
-
-    //     report.report(parsedData);
-    //     res.send(200);
-    // } catch (e) {
-    //     console.log("Invalid Error");
-    //     res.send(400);
+    // process query
+    // var reportText = ''
+    // for (var item in req.body) {
+    //     reportText += item.toString() + ': ' + req.query[item].toString();
+    //     reportText += '  /n';
     // }
-
+    //console.log(reportText);
 });
+
+app.get('/webreportverification/:code', function(req, res) {
+    // 
+});
+
+
 
 
 ////////////
