@@ -23,7 +23,7 @@ module.exports = {
     },
     alert: function(data) {
         var subjectLine = "Sexual Harrassment Alert!"
-        var alertData = data["name"] + " is in trouble!" + "\n" + "Alert sent from this location: " + getGoogleMapLink(data["location"]) + "\n" + "at " + data["time"] + " on " + data["date"] + "\n" + "If you can, try to reach out to " + data["name"] + " or alert the authorities.";
+        var alertData = data["name"] + " is in trouble!" + "\n\n" + "Alert sent from this location: " + getGoogleMapLink(data["location"]) + "\n" + "at " + data["time"] + " on " + data["date"] + "\n\n" + "If you can, try to reach out to " + data["name"] + " or alert the authorities.";
 
         email(subjectLine, alertData);
 
