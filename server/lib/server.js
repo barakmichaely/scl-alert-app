@@ -104,8 +104,10 @@ app.post('/webreport', function(req, res) {
 });
 
 app.get('/webreportverification/:code', function(req, res) {
-    res.send('verifying...');
-    processVerificationCode(req.params.code)
+    
+    processVerificationCode(req.params.code, function (message) {
+        res.send('<html><head><title>Verification</title></head><body><h4 style="color:black;font-weight:300">' + message + '</h2></body></html>');    
+    })
     
 
     return;
