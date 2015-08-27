@@ -84,7 +84,9 @@ app.get('/info', function(req, res) {
 
 // For reports sent by the website component
 app.get('/webreport', function(req, res) {
-    console.log('web report')
+    console.log('--Web Report--');
+    console.log(req.query);
+    console.log('--------------')
     res.send(req.query);
 
     // // type stuff like below
