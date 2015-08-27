@@ -1,6 +1,7 @@
 // Web Report
 var postmark = require("postmark")('f8536579-7284-4950-9e3d-977cc96332d0');
 var openReports = {};
+var serverUrl = 'sclapp.herokuapp.com';
 
 function processNewReport (report) {
 	// Gets Object
@@ -43,7 +44,7 @@ function processVerificationCode (code, callback) {
 function emailVerificationLink (code) {
 	var report = openReports[code];
 	var emailData = {};
-	var link = 'http://localhost:8080/webreportverification/' + code;
+	var link = 'http://' + serverUrl + '/webreportverification/' + code;
 
 	emailData.from = 'bm09148n@pace.edu';
 	emailData.to = report.email!=null? report.email : 'bm09148n@pace.edu';
