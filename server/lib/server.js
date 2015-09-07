@@ -1,25 +1,78 @@
-////////
-// SETUP
-////////
-// Import the 'express' module
+/*
+	Initializes variables and runs the server
+*/
 var express = require('express'),
     app = express(),
-    report = require('./report'),
-    cheerio = require('cheerio'),
-    _ = require('lodash');
+    report = require('./reports'),
+    alert = require('./alerts'),
+    verification = require('./verification');
+   // cheerio = require('cheerio'); // For whitepages
 
-// Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
+app.listen(app.get('port'), function() {
+    console.log("scl-alert-app is running at localhost:" + app.get('port'));
+});
 
-///////////
-// MAIN CODE
-///////////
+/*
+	HTTP Requests to Alerts, Reports, and Email Verification
+*/
 
-// Respond to a GET Request at address 'localhost:8080/' with a message
 app.get('/', function(req, res) {
     res.send('GET request to homepage');
 });
 
+app.post('/report/:data', function(req, res) {
+    // Example : {"name":"name","date":"Jun 11th 2013","time":"3:12 PM","report":"this is where information within the report will go"}
+    try {
+        var parsedData = JSON.parse(req.params.data);
+        report.report(parsedData);
+        res.send(200);
+    } catch (e) {
+        console.log("Invalid Error");
+        res.send(400);
+    }
+
+});
+
+app.post('/alert/:data', function(req, res) {
+   	// Example : {"name":"name","location":"12345,678910","date":"01-01-2001","time":"2:35"}
+   	try {
+   		var parsedData = JSON.parse(req.params.data);
+   		alert.alert(parsedData);
+		res.send(200);
+   	}
+   	catch (e) {
+   		console.log("Invalid Error");
+   		res.send(400);
+   	}
+});
+
+// Asks for a @pace.edu email to be entered and checks validity
+app.post('/verification/:email',function(req, res){
+	try{
+		var receivedEmail = req.params.email;
+		verification.checkEmail(receivedEmail);
+		res.send(200);}
+	catch(e){
+		console.log("Invalid Error");
+		res.send(400);
+	}
+});
+
+// Asks for verification code to be entered and checks validity
+app.post('/verification/:email/:code',function(req, res){
+		var receivedCode = req.params.code;
+		var receivedEmail = req.params.email;
+
+		if (verification.checkCode(receivedEmail,receivedCode)==true){
+			res.send(200);
+		}
+		else{
+			res.send(418);
+		}
+});
+
+/* //[[UNDER CONSTRUCTION]]
 app.get('/whitepages', function(req, res) {
 	var request = require('request');
 	request('https://whitepages.pace.edu/', function (error, response, body) {
@@ -32,61 +85,9 @@ app.get('/whitepages', function(req, res) {
 			el = $(el);
 			console.log(el.text());
 		});
-
 		res.send(body) // Show the HTML for the pace whitepages. 
 	}
 	
-	})
+	});
 });
-
-
-// Respond to a GET Request at address 'localhost:8080/report/:data' with a message
-app.post('/report/:data', function(req, res) {
-
-    // type stuff like below
-    //{"name":"barak","date":"Jun 11th 2013","time":"3:12 PM","report":"blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah"}
-    try {
-        var parsedData = JSON.parse(req.params.data);
-
-        report.report(parsedData);
-        res.send(200);
-    } catch (e) {
-        console.log("Invalid Error");
-        res.send(400);
-    }
-
-});
-
-app.post('/alert/:data', function(req, res) {
-
-// use this for testing purposes
-	if (req.params.data == "test") {
-
-    	report.alert(report.testalert);
-	}
-// the else is for actual data passed in 
-	else {
-   
-   		report.alert(JSON.parse(req.params.data));
-   	}
-
-    res.send(200);
-
-    // missing is an alternate response code if this does not work
-
-});
-
-// Respond to a GET request at address 'localhost:8080/info' with a file
-app.get('/info', function(req, res) {
-    res.sendfile(__dirname + '/info.json');
-});
-
-////////////
-// RUN SERVER
-////////////
-
-// Start Listening at set Port (Starts Server)
-app.listen(app.get('port'), function() {
-    // Outputs a Message in the Command Line When the Server Has Started Listening
-    console.log("scl-alert-app is running at localhost:" + app.get('port'));
-});
+*/
