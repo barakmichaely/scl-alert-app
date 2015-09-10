@@ -28,7 +28,6 @@
 		E525771C1B2B89130021CCC1 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E525771A1B2B89130021CCC1 /* Icon-60@2x.png */; };
 		E525771D1B2B89130021CCC1 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E525771B1B2B89130021CCC1 /* Icon-60@3x.png */; };
 		E589C2D01B24E9D0002661E3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589C2CF1B24E9D0002661E3 /* Navigation.swift */; };
-		E590AF891B729D3400D3828D /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590AF881B729D3400D3828D /* Policies.swift */; };
 		E590AF8B1B729EB700D3828D /* AlertPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590AF8A1B729EB700D3828D /* AlertPicker.swift */; };
 		E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE13041B24E2D50011E954 /* ViewController.swift */; };
 		E5DE13081B24E2D50011E954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE13061B24E2D50011E954 /* Main.storyboard */; };
@@ -46,6 +45,7 @@
 		E5DE13371B24E7590011E954 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DE13351B24E7590011E954 /* cancel.png */; };
 		E5DE13381B24E7590011E954 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DE13361B24E7590011E954 /* arrow.png */; };
 		E5ECF06D1B2BA39F00C2A0CC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ECF06C1B2BA39F00C2A0CC /* Data.swift */; };
+		E5F0FD7E1BA101F4001CE688 /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F0FD7D1BA101F4001CE688 /* Policies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 		E525771A1B2B89130021CCC1 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		E525771B1B2B89130021CCC1 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 		E589C2CF1B24E9D0002661E3 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
-		E590AF881B729D3400D3828D /* Policies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Policies.swift; path = "../../scl-alert-app-v2/SCLAlert/Policies.swift"; sourceTree = "<group>"; };
 		E590AF8A1B729EB700D3828D /* AlertPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPicker.swift; sourceTree = "<group>"; };
 		E5DE12FD1B24E2D50011E954 /* SCLAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCLAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE13011B24E2D50011E954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		E5DE13351B24E7590011E954 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		E5DE13361B24E7590011E954 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		E5ECF06C1B2BA39F00C2A0CC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E5F0FD7D1BA101F4001CE688 /* Policies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Policies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +224,8 @@
 				E51896A71B27C71100D02870 /* AlertView.swift */,
 				E52577181B2B614B0021CCC1 /* APIClient.swift */,
 				E51896A31B2667F200D02870 /* EditContact.swift */,
-				E590AF881B729D3400D3828D /* Policies.swift */,
 				E518968D1B251D6100D02870 /* ReportMainView.swift */,
+				E5F0FD7D1BA101F4001CE688 /* Policies.swift */,
 				E51896A91B27CA8300D02870 /* ReportCollection.swift */,
 				E518969B1B264D7400D02870 /* ReportList.swift */,
 				E518968B1B2506BD00D02870 /* MainView.swift */,
@@ -358,8 +358,8 @@
 				E5DE13321B24E5A10011E954 /* CollectionTest.swift in Sources */,
 				E51896AA1B27CA8300D02870 /* ReportCollection.swift in Sources */,
 				E51896901B25201700D02870 /* EmbedSegue.swift in Sources */,
-				E590AF891B729D3400D3828D /* Policies.swift in Sources */,
 				E518968E1B251D6200D02870 /* ReportMainView.swift in Sources */,
+				E5F0FD7E1BA101F4001CE688 /* Policies.swift in Sources */,
 				E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */,
 				E51896A41B2667F200D02870 /* EditContact.swift in Sources */,
 				E52577191B2B614B0021CCC1 /* APIClient.swift in Sources */,

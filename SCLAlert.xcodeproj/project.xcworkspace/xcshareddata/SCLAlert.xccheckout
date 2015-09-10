@@ -21,7 +21,7 @@
 		<string>../../../scl-alert-app-v2</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:barakmichaely/scl-alert-app.git</string>
+	<string>https://github.com/barakmichaely/scl-alert-app.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
