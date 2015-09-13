@@ -1,0 +1,27 @@
+{
+	"selected": {
+		"campus": "New York City",
+		"building": "1 Pace Plaza"
+	},
+	"locations": [
+		{
+			"name": "New York City",
+			"buildings": [	
+				{
+					"name": "1 Pace Plaza",
+					"points": [
+						{ "x": 0, "y": 10 },
+						{ "x": 5, "y": -4 }
+					]
+				},
+				{
+					"name": "Maria's Tower",
+					"points": [
+						{ "x": 0, "y": 10 },
+						{ "x": 5, "y": -4 }
+					]
+				}
+			]
+		}
+	]
+}

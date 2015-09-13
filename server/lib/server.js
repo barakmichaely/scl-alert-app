@@ -1,6 +1,11 @@
-////////
-// SETUP
-////////
+/* SERVER */
+
+
+// global.myUrl = 'https://localhost:8080'; // local
+// global.myUrl = 'sclapp.herokuapp.com'; // heroku server
+global.myUrl = 'https://a0b95e6.ngrok.com'; // ngrok
+
+
 // Import the 'express' module
 var express = require('express'),
     app = express(),
@@ -12,6 +17,12 @@ var express = require('express'),
 var processNewReport = require('./webreport').processNewReport;
 var processVerificationCode = require('./webreport').processVerificationCode;
 var createVerificationCode = require('./webreport').createVerificationCode;
+
+var userVerification = require('./user-verification');
+
+var dispatcher = require('./dispatcher');
+
+var sms = require('./sms');
 
 // Set the Port Number for This Server to Listen To (8080)
 app.set('port', (process.env.PORT || 8080));
@@ -92,31 +103,125 @@ app.get('/info', function(req, res) {
 });
 
 
-// For reports sent by the website component
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// Partially Completed
+
+/* --  User Verification  --  */
+
+// Verify New User
+app.get('/newuser/:email', function(req, res) {
+    userVerification.newUser(req.params.email, function (valid) {
+        if (valid) {
+            res.send('Valid Email. Emailed User a Verification Code.');
+        } else {
+            res.send('invalid email. Or something...');
+        }
+    })
+});
+// Verify New User Code
+app.get('/verifyusercode/:code', function(req, res) {
+    userVerification.verifyUser(req.params.code, function (valid, message) {
+        if (valid) {
+            res.send(message);
+        } else {
+            res.send(message);
+        }
+    })
+});
+
+/* --  Web Reports  --  */
+
+// New Web Report. Report Message is in POST Body.
 app.post('/webreport', function(req, res) {
     console.log('--Web Report--');
     console.log(req.body);
     console.log('--------------')
 
-    processNewReport(req.body);
+    dispatcher.newWebreport(req.body);
+    //processNewReport(req.body);
     
     res.send('Sent!');
 });
-
+// Verify Web Report
 app.get('/webreportverification/:code', function(req, res) {
-    
-    processVerificationCode(req.params.code, function (message) {
-        res.send('<html><head><title>Verification</title></head><body><h4 style="color:black;font-weight:300">' + message + '</h2></body></html>');    
-    })
-    
 
-    return;
-    console.log('doing something')
-    var code = createVerificationCode();
+    dispatcher.webreportVerification(req.params.code, function (message) {
+        res.send('<html><head><title>Verification</title></head><body><h4 style="color:black;font-weight:300">' + message + '</h2></body></html>');
+    });
 
-    res.send('Code: '+code);
+    // processVerificationCode(req.params.code, function (message) {
+    //     res.send('<html><head><title>Verification</title></head><body><h4 style="color:black;font-weight:300">' + message + '</h2></body></html>');    
+    // })
 });
 
+
+// NOT YET COMPLETED
+
+/* --  App Alerts  --  */
+
+// New Alert from App. Alert Message is in POST Body.
+app.post('/appalert', function (req, res) {
+    // TODO: Make sure alert was properly sent or saved before sending response
+
+    /* alert structure is recieved as a json object. No parsing necessary */
+    dispatcher.newAlert(req.body);
+    res.send('Sent Alert!');
+});
+
+/* --  App Reports  --  */
+// New Report from App. Report Message is in POST Body.
+app.post('/appreport', function (req, res) {
+    // TODO: Make sure report was properly sent or saved before sending response
+
+    /* report structure is recieved as a json object. No parsing necessary */
+    dispatcher.newReport(req.body);
+    res.send('Sent Report!');
+});
+
+app.get('/sms/:msg', function (req,res) {
+    sms.sms(req.params.msg);
+    res.send('texted')
+});
+app.get('/call/:msg', function (req,res) {
+    sms.voicecall(req.params.msg);
+    res.send('called')
+});
+
+// This Returns a Voice Message XML, based on the code of the report
+app.get('/voicemessagexml/:code', function (req,res) {    
+    // Create a Voice Message XML from stored alert message
+    var xml = sms.createXML( dispatcher.getVoiceMessage(req.params.code) );
+    // Send the newly generated xml in response
+    res.setHeader('content-type', 'text/xml');
+    res.end(xml);
+});
 
 
 

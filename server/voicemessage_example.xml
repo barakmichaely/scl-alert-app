@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+	<Say voice="alice">
+	HELP! John Doe is in Trouble.
+	</Say>
+	<Pause length="1"/>
+	<Say voice="alice" language="en-AU" loop="2">
+	John's location is One Pace Plaza on the third floor.
+	</Say>
+</Response>
