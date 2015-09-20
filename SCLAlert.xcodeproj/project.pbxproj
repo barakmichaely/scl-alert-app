@@ -27,6 +27,20 @@
 		E52577191B2B614B0021CCC1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52577181B2B614B0021CCC1 /* APIClient.swift */; };
 		E525771C1B2B89130021CCC1 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E525771A1B2B89130021CCC1 /* Icon-60@2x.png */; };
 		E525771D1B2B89130021CCC1 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E525771B1B2B89130021CCC1 /* Icon-60@3x.png */; };
+		E53475D11BAB671E0069BB48 /* SingleTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53475D01BAB671E0069BB48 /* SingleTextField.xib */; };
+		E53475D31BAB69040069BB48 /* SingleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475D21BAB69040069BB48 /* SingleTextField.swift */; };
+		E53475D51BAB6E390069BB48 /* ReportFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475D41BAB6E390069BB48 /* ReportFormController.swift */; };
+		E53475D71BAB74CD0069BB48 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475D61BAB74CD0069BB48 /* Field.swift */; };
+		E53475D91BAB83A10069BB48 /* DropdownField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53475D81BAB83A10069BB48 /* DropdownField.xib */; };
+		E53475DB1BAB83BD0069BB48 /* DropdownField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475DA1BAB83BD0069BB48 /* DropdownField.swift */; };
+		E53475DD1BAB87110069BB48 /* DatePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475DC1BAB87110069BB48 /* DatePickerField.swift */; };
+		E53475DF1BAB87290069BB48 /* DatePickerField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53475DE1BAB87290069BB48 /* DatePickerField.xib */; };
+		E53475E11BAB8B550069BB48 /* MultiTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53475E01BAB8B550069BB48 /* MultiTextField.xib */; };
+		E53475E31BAB8BDA0069BB48 /* MultiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53475E21BAB8BDA0069BB48 /* MultiTextField.swift */; };
+		E58990F51BAF2E3800152487 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58990F41BAF2E3800152487 /* DatePickerView.xib */; };
+		E58990F71BAF308900152487 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58990F61BAF308900152487 /* DatePickerView.swift */; };
+		E58990F91BAF411900152487 /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58990F81BAF411900152487 /* PickerView.xib */; };
+		E58990FB1BAF420F00152487 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58990FA1BAF420F00152487 /* PickerView.swift */; };
 		E589C2D01B24E9D0002661E3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589C2CF1B24E9D0002661E3 /* Navigation.swift */; };
 		E590AF8B1B729EB700D3828D /* AlertPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590AF8A1B729EB700D3828D /* AlertPicker.swift */; };
 		E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE13041B24E2D50011E954 /* ViewController.swift */; };
@@ -79,6 +93,20 @@
 		E52577181B2B614B0021CCC1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E525771A1B2B89130021CCC1 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		E525771B1B2B89130021CCC1 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		E53475D01BAB671E0069BB48 /* SingleTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleTextField.xib; sourceTree = "<group>"; };
+		E53475D21BAB69040069BB48 /* SingleTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTextField.swift; sourceTree = "<group>"; };
+		E53475D41BAB6E390069BB48 /* ReportFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportFormController.swift; sourceTree = "<group>"; };
+		E53475D61BAB74CD0069BB48 /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		E53475D81BAB83A10069BB48 /* DropdownField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownField.xib; sourceTree = "<group>"; };
+		E53475DA1BAB83BD0069BB48 /* DropdownField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownField.swift; sourceTree = "<group>"; };
+		E53475DC1BAB87110069BB48 /* DatePickerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerField.swift; sourceTree = "<group>"; };
+		E53475DE1BAB87290069BB48 /* DatePickerField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerField.xib; sourceTree = "<group>"; };
+		E53475E01BAB8B550069BB48 /* MultiTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiTextField.xib; sourceTree = "<group>"; };
+		E53475E21BAB8BDA0069BB48 /* MultiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiTextField.swift; sourceTree = "<group>"; };
+		E58990F41BAF2E3800152487 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		E58990F61BAF308900152487 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		E58990F81BAF411900152487 /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		E58990FA1BAF420F00152487 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		E589C2CF1B24E9D0002661E3 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		E590AF8A1B729EB700D3828D /* AlertPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPicker.swift; sourceTree = "<group>"; };
 		E5DE12FD1B24E2D50011E954 /* SCLAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCLAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +150,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E53475E41BAF1E2E0069BB48 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				E53475D61BAB74CD0069BB48 /* Field.swift */,
+				E53475D01BAB671E0069BB48 /* SingleTextField.xib */,
+				E53475D21BAB69040069BB48 /* SingleTextField.swift */,
+				E58990F41BAF2E3800152487 /* DatePickerView.xib */,
+				E58990F81BAF411900152487 /* PickerView.xib */,
+				E58990FA1BAF420F00152487 /* PickerView.swift */,
+				E58990F61BAF308900152487 /* DatePickerView.swift */,
+				E53475E01BAB8B550069BB48 /* MultiTextField.xib */,
+				E53475E21BAB8BDA0069BB48 /* MultiTextField.swift */,
+				E53475D81BAB83A10069BB48 /* DropdownField.xib */,
+				E53475DC1BAB87110069BB48 /* DatePickerField.swift */,
+				E53475DE1BAB87290069BB48 /* DatePickerField.xib */,
+				E53475DA1BAB83BD0069BB48 /* DropdownField.swift */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
 		E5DE12F41B24E2D50011E954 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +250,7 @@
 				E5DE130B1B24E2D50011E954 /* LaunchScreen.xib */,
 				E5DE13221B24E3B70011E954 /* Main2.storyboard */,
 				E5DE13061B24E2D50011E954 /* Main.storyboard */,
+				E53475E41BAF1E2E0069BB48 /* Fields */,
 				E5DE13271B24E3FA0011E954 /* Verification.storyboard */,
 				E5DE13291B24E4070011E954 /* Report.storyboard */,
 				E51896A51B27C56400D02870 /* Alert.storyboard */,
@@ -227,6 +276,7 @@
 				E518968D1B251D6100D02870 /* ReportMainView.swift */,
 				E5F0FD7D1BA101F4001CE688 /* Policies.swift */,
 				E51896A91B27CA8300D02870 /* ReportCollection.swift */,
+				E53475D41BAB6E390069BB48 /* ReportFormController.swift */,
 				E518969B1B264D7400D02870 /* ReportList.swift */,
 				E518968B1B2506BD00D02870 /* MainView.swift */,
 				E5DE13301B24E5A10011E954 /* MoreView.swift */,
@@ -321,9 +371,15 @@
 				E5DE13371B24E7590011E954 /* cancel.png in Resources */,
 				E51896A01B265D1400D02870 /* cancelx.png in Resources */,
 				E51896A21B265D4700D02870 /* cancelx16.png in Resources */,
+				E53475D11BAB671E0069BB48 /* SingleTextField.xib in Resources */,
+				E53475E11BAB8B550069BB48 /* MultiTextField.xib in Resources */,
 				E5DE13081B24E2D50011E954 /* Main.storyboard in Resources */,
+				E53475DF1BAB87290069BB48 /* DatePickerField.xib in Resources */,
+				E58990F91BAF411900152487 /* PickerView.xib in Resources */,
 				E51896991B2646EA00D02870 /* cancel24.png in Resources */,
+				E53475D91BAB83A10069BB48 /* DropdownField.xib in Resources */,
 				E5DE13281B24E3FA0011E954 /* Verification.storyboard in Resources */,
+				E58990F51BAF2E3800152487 /* DatePickerView.xib in Resources */,
 				E5DE132A1B24E4070011E954 /* Report.storyboard in Resources */,
 				E5DE130D1B24E2D50011E954 /* LaunchScreen.xib in Resources */,
 				E51896A61B27C56400D02870 /* Alert.storyboard in Resources */,
@@ -352,13 +408,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53475DD1BAB87110069BB48 /* DatePickerField.swift in Sources */,
+				E58990F71BAF308900152487 /* DatePickerView.swift in Sources */,
 				E590AF8B1B729EB700D3828D /* AlertPicker.swift in Sources */,
 				E51896861B24FE5A00D02870 /* AppDelegate.swift in Sources */,
+				E53475E31BAB8BDA0069BB48 /* MultiTextField.swift in Sources */,
 				E518968C1B2506BD00D02870 /* MainView.swift in Sources */,
 				E5DE13321B24E5A10011E954 /* CollectionTest.swift in Sources */,
 				E51896AA1B27CA8300D02870 /* ReportCollection.swift in Sources */,
+				E53475D71BAB74CD0069BB48 /* Field.swift in Sources */,
+				E53475D51BAB6E390069BB48 /* ReportFormController.swift in Sources */,
 				E51896901B25201700D02870 /* EmbedSegue.swift in Sources */,
 				E518968E1B251D6200D02870 /* ReportMainView.swift in Sources */,
+				E58990FB1BAF420F00152487 /* PickerView.swift in Sources */,
 				E5F0FD7E1BA101F4001CE688 /* Policies.swift in Sources */,
 				E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */,
 				E51896A41B2667F200D02870 /* EditContact.swift in Sources */,
@@ -368,6 +430,8 @@
 				E518969C1B264D7400D02870 /* ReportList.swift in Sources */,
 				E5DE13341B24E5A10011E954 /* ReportView.swift in Sources */,
 				E5DE13331B24E5A10011E954 /* MoreView.swift in Sources */,
+				E53475D31BAB69040069BB48 /* SingleTextField.swift in Sources */,
+				E53475DB1BAB83BD0069BB48 /* DropdownField.swift in Sources */,
 				E51896961B26413800D02870 /* ReportTabController.swift in Sources */,
 				E5ECF06D1B2BA39F00C2A0CC /* Data.swift in Sources */,
 			);

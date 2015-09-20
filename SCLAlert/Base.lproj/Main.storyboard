@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-147" y="154"/>
         </scene>
-        <!--Pace Alert!-->
+        <!--Pace Safety-->
         <scene sceneID="CH8-GD-y9l">
             <objects>
                 <viewController id="Zzg-hN-y4E" customClass="MainView" customModule="SCLAlert" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,8 +48,8 @@
                                         <variation key="widthClass=compact" constant="280"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
-                                <state key="normal" title="Emergency Alert">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Emergency Alert!">
                                     <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,8 +67,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-GG-JLu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.68627452850000004" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
-                                <state key="normal" title="Report">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <state key="normal" title="Report an Incident">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,8 +79,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-kc-dBf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.82326269149999998" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
-                                <state key="normal" title="More">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <state key="normal" title="Information">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -88,16 +88,39 @@
                                     <segue destination="hQA-E7-Iui" kind="show" id="6wo-st-mC1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keeping You Safe on Campus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Op-QD-XY9">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-rY-gFM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="mWy-2N-dqu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <state key="normal" title="My Emergency Contacts">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mWy-2N-dqu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="mWy-2N-dqu"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VFc-rY-gFM" firstAttribute="top" secondItem="HlK-kc-dBf" secondAttribute="bottom" constant="13" id="4Jb-g0-myJ">
+                                <variation key="widthClass=compact" constant="2"/>
+                            </constraint>
                             <constraint firstItem="5ZD-FE-DbL" firstAttribute="top" secondItem="gqH-nL-SOM" secondAttribute="bottom" constant="10" id="4hp-4R-Ryj"/>
+                            <constraint firstAttribute="centerX" secondItem="VFc-rY-gFM" secondAttribute="centerX" constant="-30" id="6nl-S2-GAL">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="VFc-rY-gFM" firstAttribute="width" secondItem="26w-n8-WXq" secondAttribute="width" id="9qh-BA-sBK"/>
                             <constraint firstItem="HlK-kc-dBf" firstAttribute="width" secondItem="5ZD-FE-DbL" secondAttribute="width" multiplier="0.5" id="A24-iM-ODn">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -124,6 +147,9 @@
                             <constraint firstItem="Ily-GG-JLu" firstAttribute="width" secondItem="5ZD-FE-DbL" secondAttribute="width" multiplier="0.5" id="WEP-Vr-wb9">
                                 <variation key="widthClass=compact" constant="-2"/>
                             </constraint>
+                            <constraint firstItem="xBt-h7-JhD" firstAttribute="top" secondItem="VFc-rY-gFM" secondAttribute="bottom" constant="8" id="aIj-Zc-3Fw">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Ily-GG-JLu" firstAttribute="width" secondItem="26w-n8-WXq" secondAttribute="width" multiplier="0.5" id="b2Y-Re-Aaz">
                                 <variation key="widthClass=compact" constant="-24"/>
                             </constraint>
@@ -139,14 +165,11 @@
                             <constraint firstItem="Ily-GG-JLu" firstAttribute="leading" secondItem="26w-n8-WXq" secondAttribute="leadingMargin" constant="12" id="hOX-Kx-tsO">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
-                            <constraint firstItem="6Op-QD-XY9" firstAttribute="top" secondItem="gqH-nL-SOM" secondAttribute="bottom" constant="8" id="iuz-tK-qFD">
+                            <constraint firstItem="VFc-rY-gFM" firstAttribute="top" secondItem="Ily-GG-JLu" secondAttribute="bottom" constant="13" id="ma5-hh-Tb8">
                                 <variation key="widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="5ZD-FE-DbL" secondAttribute="bottom" id="nGB-Xr-Qxs"/>
                             <constraint firstItem="xBt-h7-JhD" firstAttribute="top" secondItem="HlK-kc-dBf" secondAttribute="bottom" constant="145" id="oIq-fG-a9U">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstAttribute="centerX" secondItem="6Op-QD-XY9" secondAttribute="centerX" constant="-11.5" id="xl7-4S-KJB">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="5ZD-FE-DbL" secondAttribute="trailing" constant="16" id="yp0-xQ-Cq9">
@@ -158,12 +181,11 @@
                                 <exclude reference="5ZD-FE-DbL"/>
                                 <exclude reference="Ily-GG-JLu"/>
                                 <exclude reference="HlK-kc-dBf"/>
-                                <exclude reference="6Op-QD-XY9"/>
+                                <exclude reference="VFc-rY-gFM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="iuz-tK-qFD"/>
-                                <exclude reference="xl7-4S-KJB"/>
                                 <exclude reference="Lft-rC-2zE"/>
+                                <exclude reference="aIj-Zc-3Fw"/>
                                 <exclude reference="oIq-fG-a9U"/>
                                 <exclude reference="4hp-4R-Ryj"/>
                                 <exclude reference="KWR-TV-eSL"/>
@@ -178,6 +200,10 @@
                                 <exclude reference="WEP-Vr-wb9"/>
                                 <exclude reference="b2Y-Re-Aaz"/>
                                 <exclude reference="hOX-Kx-tsO"/>
+                                <exclude reference="4Jb-g0-myJ"/>
+                                <exclude reference="6nl-S2-GAL"/>
+                                <exclude reference="9qh-BA-sBK"/>
+                                <exclude reference="ma5-hh-Tb8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -185,13 +211,12 @@
                                 <include reference="5ZD-FE-DbL"/>
                                 <include reference="Ily-GG-JLu"/>
                                 <include reference="HlK-kc-dBf"/>
-                                <include reference="6Op-QD-XY9"/>
+                                <include reference="VFc-rY-gFM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="iuz-tK-qFD"/>
-                                <include reference="xl7-4S-KJB"/>
-                                <include reference="Lft-rC-2zE"/>
-                                <include reference="oIq-fG-a9U"/>
+                                <exclude reference="Lft-rC-2zE"/>
+                                <include reference="aIj-Zc-3Fw"/>
+                                <exclude reference="oIq-fG-a9U"/>
                                 <exclude reference="4hp-4R-Ryj"/>
                                 <exclude reference="He9-Va-RDN"/>
                                 <include reference="KWR-TV-eSL"/>
@@ -209,10 +234,14 @@
                                 <exclude reference="b2Y-Re-Aaz"/>
                                 <exclude reference="cXa-MW-0mN"/>
                                 <include reference="hOX-Kx-tsO"/>
+                                <include reference="4Jb-g0-myJ"/>
+                                <include reference="6nl-S2-GAL"/>
+                                <include reference="9qh-BA-sBK"/>
+                                <include reference="ma5-hh-Tb8"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Pace Alert!" id="gAP-RA-iAQ">
+                    <navigationItem key="navigationItem" title="Pace Safety" id="gAP-RA-iAQ">
                         <barButtonItem key="backBarButtonItem" title="  " id="Ie5-OX-ZIo"/>
                     </navigationItem>
                     <connections>

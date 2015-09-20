@@ -11,7 +11,7 @@ import UIKit
 class Navigation: UINavigationController, UINavigationBarDelegate {
     
     lazy var bar = UINavigationBar()
-    let font = UIFont.systemFontOfSize(30, weight: UIFontWeightLight)
+    let font = UIFont.systemFontOfSize(16, weight: UIFontWeightRegular)
     
     override func viewDidLoad() {
         super.viewDidLoad()

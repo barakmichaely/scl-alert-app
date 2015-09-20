@@ -26,7 +26,8 @@ class MainView: UIViewController {
         
         alertButton.addTarget(self, action: "startAlert", forControlEvents: UIControlEvents.TouchUpInside)
 
-        // Do any additional setup after loading the view.
+        // Set Navigation Bar Color
+        (self.navigationController as! Navigation).setTint( UIColor(red: 28/255, green: 108/255, blue: 182/255, alpha: 1) )
     }
     
     func startAlert() {
