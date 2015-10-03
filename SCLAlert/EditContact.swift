@@ -14,7 +14,7 @@ class EditContact: UIViewController, UITextFieldDelegate {
     @IBOutlet var number: UITextField!
     
     var contactPos = 0
-    var contact = NSMutableDictionary()
+    var contact = ContactDataObject()
     var editButton:UIBarButtonItem!
     
     var editingText = false {
@@ -60,7 +60,6 @@ class EditContact: UIViewController, UITextFieldDelegate {
     }
     
     func unfocus() {
-        println("HHH")
         self.name.resignFirstResponder()
         self.number.resignFirstResponder()
         editingText = false
@@ -68,8 +67,8 @@ class EditContact: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         // Save Information
-        contact.setValue(name.text, forKey: "name")
-        contact.setValue(number.text, forKey: "number")
+        contact.name = name.text!
+        contact.phone = number.text!
         
         data.contacts[contactPos] = contact
         
@@ -77,21 +76,25 @@ class EditContact: UIViewController, UITextFieldDelegate {
         if (name.text == "" || number.text == "") {
             data.contacts.removeAtIndex(contactPos)
         }
+        
+        data.save()
     }
     
     func updateInfo() {
         contact = data.contacts[contactPos]
+        name.text = contact.name
+        number.text = contact.phone
         
-        if let cName = contact.valueForKey("name") as? String {
-            name.text = cName
-        } else {
-            name.text = ""
-        }
-        if let cNumber = contact.valueForKey("number") as? String {
-            number.text = cNumber
-        } else {
-            number.text = ""
-        }
+//        if let cName = contact.valueForKey("name") as? String {
+//            name.text = cName
+//        } else {
+//            name.text = ""
+//        }
+//        if let cNumber = contact.valueForKey("number") as? String {
+//            number.text = cNumber
+//        } else {
+//            number.text = ""
+//        }
         
         if (name.text == "") {
             editingText = true
@@ -115,15 +118,15 @@ class EditContact: UIViewController, UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         if (textField.keyboardType == UIKeyboardType.NamePhonePad) {
-            var newString = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            var newString = (textField.text as! NSString).stringByReplacingCharactersInRange(range, withString: string)
             var components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
             
-            var decimalString = "".join(components) as NSString
+            var decimalString = components.joinWithSeparator("") as NSString
             var length = decimalString.length
             var hasLeadingOne = length > 0 && decimalString.characterAtIndex(0) == (1 as unichar)
             
             if length == 0 || (length > 10 && !hasLeadingOne) || length > 11 {
-                var newLength = (textField.text as NSString).length + (string as NSString).length - range.length as Int
+                var newLength = (textField.text as! NSString).length + (string as NSString).length - range.length as Int
                 
                 return (newLength > 10) ? false : true
             }
@@ -156,27 +159,27 @@ class EditContact: UIViewController, UITextFieldDelegate {
 
 
     func startedNameEdit() {
-        println("start")
+        print("start")
         name.borderStyle = UITextBorderStyle.RoundedRect
         name.backgroundColor = UIColor(white: 1, alpha: 0.2)
         editingText = true
     }
     
     func endedNameEdit() {
-        println("end")
+        print("end")
         name.borderStyle = UITextBorderStyle.None
         name.backgroundColor = UIColor.clearColor()
     }
     
     func startedNumberEdit() {
-        println("start")
+        print("start")
         number.borderStyle = UITextBorderStyle.RoundedRect
         number.backgroundColor = UIColor(white: 1, alpha: 0.2)
         editingText = true
     }
     
     func endedNumberEdit() {
-        println("end")
+        print("end")
         number.borderStyle = UITextBorderStyle.None
         number.backgroundColor = UIColor.clearColor()
     }

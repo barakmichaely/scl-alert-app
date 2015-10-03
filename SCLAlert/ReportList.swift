@@ -13,47 +13,97 @@ class ReportList: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.tableView.registerNib(UINib(nibName: "ReportListCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableView.tableFooterView = UIView()
 
+        // Setup Navigation Bar
+        (self.navigationController! as! Navigation).setTint(UIColor.blueColor())
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "newReportPressed")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "dismiss")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func dismiss () {
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    func newReportPressed () {
+        // Open New Report Form
+        openReport()
+    }
 
+    func openReport (id : Int = -1, viewOnly : Bool = false) {
+        if (id == -1) {
+            var reportNavigation = ReportFormNavigationWrapper()
+            self.presentViewController(reportNavigation, animated: true, completion: {})
+        } else {
+            // Create Report Form View
+            var reportView = ReportFormController()
+            // Set Datasource
+            reportView.dataSource = ReportDataObject()
+            
+            // If it was already sent, disable editing
+            if (viewOnly) {
+                reportView.viewOnly = true
+            }
+            
+            self.navigationController!.pushViewController(reportView, animated: true)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 90
+        return 65
     }
     
     // MARK: - Table view data source
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return "Open Reports"
+        }
+        return "Sent Reports"
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        return 2
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView")! as! ReportView
-        self.showViewController(reportView, sender: self)
+        let viewOnly = (indexPath.section == 1) ? true : false
+        openReport(indexPath.row, viewOnly: viewOnly)
+        //var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView") as! ReportView
+        //self.showViewController(reportView, sender: self)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
         // Configure the cell...
+        cell.textLabel?.text = "Sep. 14th, 2014"
+        cell.detailTextLabel?.text = "Verbal Abuse Report"
+        
+        if (indexPath.section == 1) {
+            cell.accessoryType = UITableViewCellAccessoryType.DetailButton
+        }
 
         return cell
     }

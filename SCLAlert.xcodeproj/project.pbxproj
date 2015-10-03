@@ -43,6 +43,16 @@
 		E58990FB1BAF420F00152487 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58990FA1BAF420F00152487 /* PickerView.swift */; };
 		E589C2D01B24E9D0002661E3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589C2CF1B24E9D0002661E3 /* Navigation.swift */; };
 		E590AF8B1B729EB700D3828D /* AlertPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590AF8A1B729EB700D3828D /* AlertPicker.swift */; };
+		E5CEA1AA1BBDE2890055306C /* ReportListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CEA1A91BBDE2890055306C /* ReportListCell.xib */; };
+		E5CEA1AC1BBDE9080055306C /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1AB1BBDE9080055306C /* ReportNavigationController.swift */; };
+		E5CEA1AE1BBDE9E20055306C /* Reports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5CEA1AD1BBDE9E20055306C /* Reports.storyboard */; };
+		E5CEA1B01BBE2EB40055306C /* ReportFormNavigationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1AF1BBE2EB40055306C /* ReportFormNavigationWrapper.swift */; };
+		E5CEA1B21BBEE3500055306C /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1B11BBEE3500055306C /* CircleButton.swift */; };
+		E5CEA1B41BBF244B0055306C /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1B31BBF244B0055306C /* RectangleButton.swift */; };
+		E5CEA1B71BBF77270055306C /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1B61BBF77270055306C /* DataObject.swift */; };
+		E5CEA1B91BBF78820055306C /* ContactDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1B81BBF78820055306C /* ContactDataObject.swift */; };
+		E5CEA1BB1BBF7A1E0055306C /* ReportDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1BA1BBF7A1E0055306C /* ReportDataObject.swift */; };
+		E5CEA1BD1BBF7C470055306C /* AlertDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEA1BC1BBF7C470055306C /* AlertDataObject.swift */; };
 		E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE13041B24E2D50011E954 /* ViewController.swift */; };
 		E5DE13081B24E2D50011E954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE13061B24E2D50011E954 /* Main.storyboard */; };
 		E5DE130A1B24E2D50011E954 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5DE13091B24E2D50011E954 /* Images.xcassets */; };
@@ -109,6 +119,16 @@
 		E58990FA1BAF420F00152487 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		E589C2CF1B24E9D0002661E3 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		E590AF8A1B729EB700D3828D /* AlertPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPicker.swift; sourceTree = "<group>"; };
+		E5CEA1A91BBDE2890055306C /* ReportListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportListCell.xib; sourceTree = "<group>"; };
+		E5CEA1AB1BBDE9080055306C /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
+		E5CEA1AD1BBDE9E20055306C /* Reports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reports.storyboard; sourceTree = "<group>"; };
+		E5CEA1AF1BBE2EB40055306C /* ReportFormNavigationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportFormNavigationWrapper.swift; sourceTree = "<group>"; };
+		E5CEA1B11BBEE3500055306C /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		E5CEA1B31BBF244B0055306C /* RectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
+		E5CEA1B61BBF77270055306C /* DataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
+		E5CEA1B81BBF78820055306C /* ContactDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDataObject.swift; sourceTree = "<group>"; };
+		E5CEA1BA1BBF7A1E0055306C /* ReportDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDataObject.swift; sourceTree = "<group>"; };
+		E5CEA1BC1BBF7C470055306C /* AlertDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDataObject.swift; sourceTree = "<group>"; };
 		E5DE12FD1B24E2D50011E954 /* SCLAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCLAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE13011B24E2D50011E954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5DE13041B24E2D50011E954 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +190,17 @@
 			name = Fields;
 			sourceTree = "<group>";
 		};
+		E5CEA1B51BBF76FB0055306C /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E5CEA1B61BBF77270055306C /* DataObject.swift */,
+				E5CEA1B81BBF78820055306C /* ContactDataObject.swift */,
+				E5CEA1BC1BBF7C470055306C /* AlertDataObject.swift */,
+				E5CEA1BA1BBF7A1E0055306C /* ReportDataObject.swift */,
+			);
+			name = "Data Objects";
+			sourceTree = "<group>";
+		};
 		E5DE12F41B24E2D50011E954 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				E51896851B24FE5A00D02870 /* AppDelegate.swift */,
+				E5CEA1B51BBF76FB0055306C /* Data Objects */,
 				E5DE133A1B24E7700011E954 /* UI */,
 				E5DE133B1B24E7780011E954 /* Scripts */,
 				E5DE13391B24E7620011E954 /* Images */,
@@ -250,9 +282,13 @@
 				E5DE130B1B24E2D50011E954 /* LaunchScreen.xib */,
 				E5DE13221B24E3B70011E954 /* Main2.storyboard */,
 				E5DE13061B24E2D50011E954 /* Main.storyboard */,
+				E5CEA1B31BBF244B0055306C /* RectangleButton.swift */,
+				E5CEA1B11BBEE3500055306C /* CircleButton.swift */,
 				E53475E41BAF1E2E0069BB48 /* Fields */,
 				E5DE13271B24E3FA0011E954 /* Verification.storyboard */,
 				E5DE13291B24E4070011E954 /* Report.storyboard */,
+				E5CEA1AD1BBDE9E20055306C /* Reports.storyboard */,
+				E5CEA1A91BBDE2890055306C /* ReportListCell.xib */,
 				E51896A51B27C56400D02870 /* Alert.storyboard */,
 				E5DE132D1B24E41F0011E954 /* Policy.storyboard */,
 				E5DE132B1B24E4110011E954 /* Contact.storyboard */,
@@ -277,7 +313,9 @@
 				E5F0FD7D1BA101F4001CE688 /* Policies.swift */,
 				E51896A91B27CA8300D02870 /* ReportCollection.swift */,
 				E53475D41BAB6E390069BB48 /* ReportFormController.swift */,
+				E5CEA1AF1BBE2EB40055306C /* ReportFormNavigationWrapper.swift */,
 				E518969B1B264D7400D02870 /* ReportList.swift */,
+				E5CEA1AB1BBDE9080055306C /* ReportNavigationController.swift */,
 				E518968B1B2506BD00D02870 /* MainView.swift */,
 				E5DE13301B24E5A10011E954 /* MoreView.swift */,
 				E5DE13311B24E5A10011E954 /* ReportView.swift */,
@@ -329,6 +367,8 @@
 		E5DE12F51B24E2D50011E954 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Barak M";
 				TargetAttributes = {
@@ -369,6 +409,7 @@
 				E5DE132E1B24E41F0011E954 /* Policy.storyboard in Resources */,
 				E51896941B263B7800D02870 /* documents.png in Resources */,
 				E5DE13371B24E7590011E954 /* cancel.png in Resources */,
+				E5CEA1AE1BBDE9E20055306C /* Reports.storyboard in Resources */,
 				E51896A01B265D1400D02870 /* cancelx.png in Resources */,
 				E51896A21B265D4700D02870 /* cancelx16.png in Resources */,
 				E53475D11BAB671E0069BB48 /* SingleTextField.xib in Resources */,
@@ -384,6 +425,7 @@
 				E5DE130D1B24E2D50011E954 /* LaunchScreen.xib in Resources */,
 				E51896A61B27C56400D02870 /* Alert.storyboard in Resources */,
 				E518969A1B2646EA00D02870 /* cancel16.png in Resources */,
+				E5CEA1AA1BBDE2890055306C /* ReportListCell.xib in Resources */,
 				E5DE13381B24E7590011E954 /* arrow.png in Resources */,
 				E5DE13241B24E3B70011E954 /* Main2.storyboard in Resources */,
 				E518969E1B2653A500D02870 /* singledocument.png in Resources */,
@@ -411,6 +453,7 @@
 				E53475DD1BAB87110069BB48 /* DatePickerField.swift in Sources */,
 				E58990F71BAF308900152487 /* DatePickerView.swift in Sources */,
 				E590AF8B1B729EB700D3828D /* AlertPicker.swift in Sources */,
+				E5CEA1BD1BBF7C470055306C /* AlertDataObject.swift in Sources */,
 				E51896861B24FE5A00D02870 /* AppDelegate.swift in Sources */,
 				E53475E31BAB8BDA0069BB48 /* MultiTextField.swift in Sources */,
 				E518968C1B2506BD00D02870 /* MainView.swift in Sources */,
@@ -421,15 +464,22 @@
 				E51896901B25201700D02870 /* EmbedSegue.swift in Sources */,
 				E518968E1B251D6200D02870 /* ReportMainView.swift in Sources */,
 				E58990FB1BAF420F00152487 /* PickerView.swift in Sources */,
+				E5CEA1AC1BBDE9080055306C /* ReportNavigationController.swift in Sources */,
 				E5F0FD7E1BA101F4001CE688 /* Policies.swift in Sources */,
+				E5CEA1B91BBF78820055306C /* ContactDataObject.swift in Sources */,
+				E5CEA1BB1BBF7A1E0055306C /* ReportDataObject.swift in Sources */,
 				E5DE13051B24E2D50011E954 /* ViewController.swift in Sources */,
 				E51896A41B2667F200D02870 /* EditContact.swift in Sources */,
 				E52577191B2B614B0021CCC1 /* APIClient.swift in Sources */,
 				E589C2D01B24E9D0002661E3 /* Navigation.swift in Sources */,
+				E5CEA1B41BBF244B0055306C /* RectangleButton.swift in Sources */,
+				E5CEA1B71BBF77270055306C /* DataObject.swift in Sources */,
 				E51896A81B27C71100D02870 /* AlertView.swift in Sources */,
+				E5CEA1B21BBEE3500055306C /* CircleButton.swift in Sources */,
 				E518969C1B264D7400D02870 /* ReportList.swift in Sources */,
 				E5DE13341B24E5A10011E954 /* ReportView.swift in Sources */,
 				E5DE13331B24E5A10011E954 /* MoreView.swift in Sources */,
+				E5CEA1B01BBE2EB40055306C /* ReportFormNavigationWrapper.swift in Sources */,
 				E53475D31BAB69040069BB48 /* SingleTextField.swift in Sources */,
 				E53475DB1BAB83BD0069BB48 /* DropdownField.swift in Sources */,
 				E51896961B26413800D02870 /* ReportTabController.swift in Sources */,

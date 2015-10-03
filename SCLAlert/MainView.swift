@@ -15,7 +15,7 @@ class MainView: UIViewController {
     
     @IBAction func reportButton(sender: AnyObject) {
         // Instantiate Report Storyboard
-        var reportView = UIStoryboard(name: "Report", bundle: nil).instantiateInitialViewController() as! UIViewController
+        var reportView = UIStoryboard(name: "Report", bundle: nil).instantiateInitialViewController() as! UIViewController!
         
         self.navigationController?.presentViewController(reportView, animated: true, completion: {})
     }
@@ -27,11 +27,11 @@ class MainView: UIViewController {
         alertButton.addTarget(self, action: "startAlert", forControlEvents: UIControlEvents.TouchUpInside)
 
         // Set Navigation Bar Color
-        (self.navigationController as! Navigation).setTint( UIColor(red: 28/255, green: 108/255, blue: 182/255, alpha: 1) )
+        (self.navigationController as! Navigation).setTint(UIColor.whiteColor())
     }
     
     func startAlert() {
-        var alertView = UIStoryboard(name: "Alert", bundle: nil).instantiateInitialViewController() as! UIViewController
+        var alertView = UIStoryboard(name: "Alert", bundle: nil).instantiateInitialViewController() as! UIViewController!
         
         self.presentViewController(alertView, animated: true, completion: {})
     }

@@ -31,7 +31,6 @@ class AlertPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         picker.delegate = self
         picker.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fjh-Wa-hcQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fjh-Wa-hcQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -40,63 +42,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-FE-DbL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-GG-JLu" customClass="CircleButton" customModule="SCLAlert" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.94901967050000002" green="0.36862745879999997" blue="0.38431376220000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.68627452850000004" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="226" id="6Ih-Of-goF">
-                                        <variation key="widthClass=compact" constant="280"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="Ily-GG-JLu" secondAttribute="height" multiplier="1:1" id="buf-eU-p5g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" title="Emergency Alert!">
-                                    <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="6Ih-Of-goF"/>
+                                        <exclude reference="buf-eU-p5g"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="4" y="340" width="160" height="160"/>
                                     <mask key="constraints">
-                                        <include reference="6Ih-Of-goF"/>
+                                        <include reference="buf-eU-p5g"/>
                                     </mask>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-GG-JLu">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.68627452850000004" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <state key="normal" title="Report an Incident">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
                                     <action selector="reportButton:" destination="Zzg-hN-y4E" eventType="touchUpInside" id="Ur7-LP-8N9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-kc-dBf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-kc-dBf" customClass="CircleButton" customModule="SCLAlert" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.11372549830000001" green="0.78431379800000001" blue="0.82326269149999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HlK-kc-dBf" secondAttribute="height" multiplier="1:1" id="wxS-Z9-qYn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <state key="normal" title="Information">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Info">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wxS-Z9-qYn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="221" y="340" width="160" height="160"/>
+                                    <mask key="constraints">
+                                        <include reference="wxS-Z9-qYn"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="hQA-E7-Iui" kind="show" id="6wo-st-mC1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-rY-gFM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFc-rY-gFM" customClass="RectangleButton" customModule="SCLAlert" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.95294123890000004" green="0.66666668650000005" blue="0.40000003579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="mWy-2N-dqu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <state key="normal" title="My Emergency Contacts">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="My Emergency Contacts" image="Icon-60.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -104,9 +110,41 @@
                                         <exclude reference="mWy-2N-dqu"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-27" y="547" width="455" height="53"/>
                                     <mask key="constraints">
                                         <include reference="mWy-2N-dqu"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-FE-DbL" customClass="CircleButton" customModule="SCLAlert" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="6Ih-Of-goF">
+                                        <variation key="widthClass=compact" constant="280"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="240" id="P8M-vy-Unz"/>
+                                    <constraint firstAttribute="width" secondItem="5ZD-FE-DbL" secondAttribute="height" multiplier="1:1" id="ods-mf-k8L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Emergency Alert!" image="Icon-60.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Ih-Of-goF"/>
+                                        <exclude reference="P8M-vy-Unz"/>
+                                        <exclude reference="ods-mf-k8L"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="2" y="80" width="396" height="256"/>
+                                    <mask key="constraints">
+                                        <exclude reference="6Ih-Of-goF"/>
+                                        <include reference="P8M-vy-Unz"/>
+                                        <include reference="ods-mf-k8L"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -114,7 +152,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VFc-rY-gFM" firstAttribute="top" secondItem="HlK-kc-dBf" secondAttribute="bottom" constant="13" id="4Jb-g0-myJ">
-                                <variation key="widthClass=compact" constant="2"/>
+                                <variation key="widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="5ZD-FE-DbL" firstAttribute="top" secondItem="gqH-nL-SOM" secondAttribute="bottom" constant="10" id="4hp-4R-Ryj"/>
                             <constraint firstAttribute="centerX" secondItem="VFc-rY-gFM" secondAttribute="centerX" constant="-30" id="6nl-S2-GAL">
@@ -134,10 +172,13 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="HlK-kc-dBf" secondAttribute="trailing" constant="41" id="Lk3-Y7-q8Q">
-                                <variation key="widthClass=compact" constant="-16"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="HlK-kc-dBf" firstAttribute="top" secondItem="5ZD-FE-DbL" secondAttribute="bottom" constant="150" id="Njc-5W-9zi">
                                 <variation key="widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="VFc-rY-gFM" firstAttribute="top" secondItem="Ily-GG-JLu" secondAttribute="bottom" constant="42" id="PHC-VK-zO3">
+                                <variation key="widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="5ZD-FE-DbL" firstAttribute="top" secondItem="gqH-nL-SOM" secondAttribute="bottom" constant="8" id="QF8-cd-NAs">
                                 <variation key="widthClass=compact" constant="10"/>
@@ -146,6 +187,12 @@
                             <constraint firstAttribute="height" secondItem="HlK-kc-dBf" secondAttribute="height" multiplier="3" id="UaP-Uv-LOZ"/>
                             <constraint firstItem="Ily-GG-JLu" firstAttribute="width" secondItem="5ZD-FE-DbL" secondAttribute="width" multiplier="0.5" id="WEP-Vr-wb9">
                                 <variation key="widthClass=compact" constant="-2"/>
+                            </constraint>
+                            <constraint firstItem="Ily-GG-JLu" firstAttribute="top" secondItem="5ZD-FE-DbL" secondAttribute="bottom" constant="4" id="Xbg-rf-r3a">
+                                <variation key="widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="Ily-GG-JLu" firstAttribute="width" secondItem="26w-n8-WXq" secondAttribute="width" multiplier="0.5" id="a82-YA-oL6">
+                                <variation key="widthClass=compact" constant="-30"/>
                             </constraint>
                             <constraint firstItem="xBt-h7-JhD" firstAttribute="top" secondItem="VFc-rY-gFM" secondAttribute="bottom" constant="8" id="aIj-Zc-3Fw">
                                 <variation key="widthClass=compact" constant="0.0"/>
@@ -163,7 +210,11 @@
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="Ily-GG-JLu" firstAttribute="leading" secondItem="26w-n8-WXq" secondAttribute="leadingMargin" constant="12" id="hOX-Kx-tsO">
-                                <variation key="widthClass=compact" constant="-16"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="5ZD-FE-DbL" firstAttribute="centerX" secondItem="26w-n8-WXq" secondAttribute="centerX" id="i3s-TM-ITG"/>
+                            <constraint firstItem="5ZD-FE-DbL" firstAttribute="top" secondItem="gqH-nL-SOM" secondAttribute="bottom" constant="21" id="jz3-fq-Gno">
+                                <variation key="widthClass=compact" constant="24"/>
                             </constraint>
                             <constraint firstItem="VFc-rY-gFM" firstAttribute="top" secondItem="Ily-GG-JLu" secondAttribute="bottom" constant="13" id="ma5-hh-Tb8">
                                 <variation key="widthClass=compact" constant="2"/>
@@ -172,72 +223,87 @@
                             <constraint firstItem="xBt-h7-JhD" firstAttribute="top" secondItem="HlK-kc-dBf" secondAttribute="bottom" constant="145" id="oIq-fG-a9U">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="HlK-kc-dBf" firstAttribute="width" secondItem="26w-n8-WXq" secondAttribute="width" multiplier="0.5" id="wjk-uJ-UUm">
+                                <variation key="widthClass=compact" constant="-30"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="5ZD-FE-DbL" secondAttribute="trailing" constant="16" id="yp0-xQ-Cq9">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="5ZD-FE-DbL"/>
                                 <exclude reference="Ily-GG-JLu"/>
                                 <exclude reference="HlK-kc-dBf"/>
                                 <exclude reference="VFc-rY-gFM"/>
+                                <exclude reference="5ZD-FE-DbL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Lft-rC-2zE"/>
-                                <exclude reference="aIj-Zc-3Fw"/>
-                                <exclude reference="oIq-fG-a9U"/>
                                 <exclude reference="4hp-4R-Ryj"/>
                                 <exclude reference="KWR-TV-eSL"/>
                                 <exclude reference="QF8-cd-NAs"/>
+                                <exclude reference="i3s-TM-ITG"/>
+                                <exclude reference="jz3-fq-Gno"/>
                                 <exclude reference="yp0-xQ-Cq9"/>
+                                <exclude reference="Skf-mR-ip4"/>
+                                <exclude reference="WEP-Vr-wb9"/>
+                                <exclude reference="Xbg-rf-r3a"/>
+                                <exclude reference="a82-YA-oL6"/>
+                                <exclude reference="b2Y-Re-Aaz"/>
+                                <exclude reference="hOX-Kx-tsO"/>
                                 <exclude reference="A24-iM-ODn"/>
                                 <exclude reference="Lk3-Y7-q8Q"/>
                                 <exclude reference="Njc-5W-9zi"/>
                                 <exclude reference="UaP-Uv-LOZ"/>
                                 <exclude reference="dri-kK-U3C"/>
-                                <exclude reference="Skf-mR-ip4"/>
-                                <exclude reference="WEP-Vr-wb9"/>
-                                <exclude reference="b2Y-Re-Aaz"/>
-                                <exclude reference="hOX-Kx-tsO"/>
+                                <exclude reference="wjk-uJ-UUm"/>
                                 <exclude reference="4Jb-g0-myJ"/>
                                 <exclude reference="6nl-S2-GAL"/>
                                 <exclude reference="9qh-BA-sBK"/>
+                                <exclude reference="PHC-VK-zO3"/>
                                 <exclude reference="ma5-hh-Tb8"/>
+                                <exclude reference="Lft-rC-2zE"/>
+                                <exclude reference="aIj-Zc-3Fw"/>
+                                <exclude reference="oIq-fG-a9U"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5ZD-FE-DbL"/>
                                 <include reference="Ily-GG-JLu"/>
                                 <include reference="HlK-kc-dBf"/>
                                 <include reference="VFc-rY-gFM"/>
+                                <include reference="5ZD-FE-DbL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Lft-rC-2zE"/>
-                                <include reference="aIj-Zc-3Fw"/>
-                                <exclude reference="oIq-fG-a9U"/>
                                 <exclude reference="4hp-4R-Ryj"/>
                                 <exclude reference="He9-Va-RDN"/>
-                                <include reference="KWR-TV-eSL"/>
+                                <exclude reference="KWR-TV-eSL"/>
                                 <exclude reference="QF8-cd-NAs"/>
+                                <include reference="i3s-TM-ITG"/>
+                                <include reference="jz3-fq-Gno"/>
                                 <exclude reference="nGB-Xr-Qxs"/>
-                                <include reference="yp0-xQ-Cq9"/>
-                                <include reference="A24-iM-ODn"/>
-                                <include reference="Lk3-Y7-q8Q"/>
-                                <include reference="Njc-5W-9zi"/>
-                                <include reference="UaP-Uv-LOZ"/>
-                                <exclude reference="dri-kK-U3C"/>
-                                <exclude reference="h7M-po-hmL"/>
-                                <include reference="Skf-mR-ip4"/>
-                                <include reference="WEP-Vr-wb9"/>
+                                <exclude reference="yp0-xQ-Cq9"/>
+                                <exclude reference="Skf-mR-ip4"/>
+                                <exclude reference="WEP-Vr-wb9"/>
+                                <exclude reference="Xbg-rf-r3a"/>
+                                <include reference="a82-YA-oL6"/>
                                 <exclude reference="b2Y-Re-Aaz"/>
                                 <exclude reference="cXa-MW-0mN"/>
                                 <include reference="hOX-Kx-tsO"/>
+                                <exclude reference="A24-iM-ODn"/>
+                                <include reference="Lk3-Y7-q8Q"/>
+                                <exclude reference="Njc-5W-9zi"/>
+                                <exclude reference="UaP-Uv-LOZ"/>
+                                <exclude reference="dri-kK-U3C"/>
+                                <exclude reference="h7M-po-hmL"/>
+                                <include reference="wjk-uJ-UUm"/>
                                 <include reference="4Jb-g0-myJ"/>
                                 <include reference="6nl-S2-GAL"/>
                                 <include reference="9qh-BA-sBK"/>
-                                <include reference="ma5-hh-Tb8"/>
+                                <include reference="PHC-VK-zO3"/>
+                                <exclude reference="ma5-hh-Tb8"/>
+                                <exclude reference="Lft-rC-2zE"/>
+                                <include reference="aIj-Zc-3Fw"/>
+                                <exclude reference="oIq-fG-a9U"/>
                             </mask>
                         </variation>
                     </view>
@@ -548,4 +614,7 @@
             <point key="canvasLocation" x="672" y="869"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-60.png" width="60" height="60"/>
+    </resources>
 </document>

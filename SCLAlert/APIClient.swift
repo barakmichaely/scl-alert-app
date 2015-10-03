@@ -8,14 +8,14 @@
 
 import UIKit
 
-func parseJSON(data:NSData, error:NSErrorPointer = nil) -> AnyObject! {
-    return NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: error)
+func parseJSON(data:NSData) throws -> AnyObject {
+    return try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
 }
 
 func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> String {
-    var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
+    var options : NSJSONWritingOptions? = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
     if NSJSONSerialization.isValidJSONObject(value) {
-        if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
+        if let data = try? NSJSONSerialization.dataWithJSONObject(value, options: options!) {
             if let string = NSString(data: data, encoding: NSUTF8StringEncoding ) {
                 return string as String
             }
@@ -40,7 +40,7 @@ public class APIClient {
         // Endcode URL
         url = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
-        println(url)
+        print(url)
         
         var error:NSError?
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
@@ -58,16 +58,20 @@ public class APIClient {
             var json:AnyObject?
             
             if (error == nil) {
-                // Convert data into a json Dictionary
-                json = parseJSON(data)
+                do {
+                    // Convert data into a json Dictionary
+                    json = try parseJSON(data!)
+                } catch _ {
+                    json = nil
+                }
                 
                 if (json == nil) {
-                    println("No Data")
+                    print("No Data")
                 }
                 
                 // Call Callback Function?
                 dispatch_async(dispatch_get_main_queue()) {
-                    callback?(response,NSString(data: data, encoding: NSUTF8StringEncoding))
+                    callback?(response,NSString(data: data!, encoding: NSUTF8StringEncoding))
                 }
                 
             }
@@ -79,15 +83,15 @@ public class APIClient {
     
     class func sendReport(json:NSDictionary?) {
         postUrl("/report", postData: json, callback: {response, data in
-            println("response: \(response)")
-            println("data: \(data)")
+            print("response: \(response)")
+            print("data: \(data)")
         })
     }
     
     class func sendAlert(json:NSDictionary) {
         postUrl("/alert", postData: json, callback: {response, data in
-            println("response: \(response)")
-            println("data: \(data)")
+            print("response: \(response)")
+            print("data: \(data)")
         })
     }
     

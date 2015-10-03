@@ -32,7 +32,7 @@ class CollectionTest: UICollectionViewController {
     
     func newContact() {
         // Create New Contact
-        var newContact = NSMutableDictionary()
+        let newContact = ContactDataObject()
         data.contacts.append(newContact)
         
         // Edit New Contact
@@ -41,7 +41,7 @@ class CollectionTest: UICollectionViewController {
     
     func editContact(pos:Int) {
         // Edit Contact
-        var contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
+        let contactView = self.storyboard!.instantiateViewControllerWithIdentifier("editContact") as! EditContact
         contactView.contactPos = pos
         self.showViewController(contactView, sender: self)
         
@@ -87,12 +87,12 @@ class CollectionTest: UICollectionViewController {
             cellID = "plus"
         }
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) 
     
         cell.layer.cornerRadius = cell.frame.size.width * 0.5
         cell.layer.masksToBounds = true
         
-        (cell.viewWithTag(5) as? UILabel)?.text = (data.contacts[indexPath.row] as! NSDictionary).valueForKey("name") as! String
+        (cell.viewWithTag(5) as? UILabel)?.text = data.contacts[indexPath.row].name
         
         return cell
     }

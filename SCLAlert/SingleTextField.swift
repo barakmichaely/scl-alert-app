@@ -19,7 +19,7 @@ class SingleTextField: Field {
     }
     
     override func getContent () -> String {
-        return textbox.text
+        return textbox.text!
     }
     
     override func disable() {

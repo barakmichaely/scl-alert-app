@@ -12,13 +12,13 @@ class MoreView: UIViewController {
 
     @IBAction func contactsButton(sender: AnyObject) {
         // Instantiate Contacts Storyboard
-        var contactsView = UIStoryboard(name: "Contact", bundle: nil).instantiateInitialViewController() as! UIViewController
+        var contactsView = UIStoryboard(name: "Contact", bundle: nil).instantiateInitialViewController() as! UIViewController!
         
         self.navigationController?.showViewController(contactsView, sender: self)
     }
     
     @IBAction func policyButton(sender: AnyObject) {
-        var policyView = UIStoryboard(name: "Policy", bundle: nil).instantiateInitialViewController() as! UIViewController
+        var policyView = UIStoryboard(name: "Policy", bundle: nil).instantiateInitialViewController() as! UIViewController!
         
         self.navigationController?.showViewController(policyView, sender: self)
     }

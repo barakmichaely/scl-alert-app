@@ -24,7 +24,7 @@ class DatePickerView: UIView {
     
     func doneAction () {
         var newDate = ""
-        var dateFormat = NSDateFormatter()
+        let dateFormat = NSDateFormatter()
         
         dateFormat.dateFormat = "MMMM d, yyyy"
         newDate = dateFormat.stringFromDate(picker.date)

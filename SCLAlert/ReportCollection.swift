@@ -46,9 +46,9 @@ class ReportCollection: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
-        var v = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as! UICollectionReusableView
+        let v = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) 
         
-        println(v.subviews.count)
+        print(v.subviews.count)
         
         if (indexPath.section == 1) {
             //(v.viewWithTag(2) as? UILabel)?.text = "Sent Reports"
@@ -84,7 +84,7 @@ class ReportCollection: UICollectionViewController {
             cellID = "new"
         }
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) 
         
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 5
@@ -106,7 +106,7 @@ class ReportCollection: UICollectionViewController {
         } else {
             // View Report
             
-            var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView")! as! ReportView
+            var reportView = self.storyboard!.instantiateViewControllerWithIdentifier("reportView") as! ReportView
             
             if (indexPath.section == 1) {
                 reportView.editable = false

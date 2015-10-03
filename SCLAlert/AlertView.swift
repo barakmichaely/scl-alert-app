@@ -34,7 +34,7 @@ class AlertView: UIViewController {
     }
     
     func selectCampus() {
-        var picker = self.storyboard!.instantiateViewControllerWithIdentifier("Picker") as! AlertPicker!
+        var picker = self.storyboard!.instantiateViewControllerWithIdentifier("Picker") as! AlertPicker
         
         picker.selected = self.campusSelection.titleLabel!.text!
         picker.data = ["New York City","Pleasantville","White Plains","*Off Campus*"]
@@ -50,7 +50,7 @@ class AlertView: UIViewController {
     }
 
     func selectBuilding() {
-        var picker = self.storyboard!.instantiateViewControllerWithIdentifier("Picker") as! AlertPicker!
+        var picker = self.storyboard!.instantiateViewControllerWithIdentifier("Picker") as! AlertPicker
         
         picker.selected = self.buildingSelection.titleLabel!.text!
         picker.data = ["Maria's Tower","John St. Dorms","Fulton St. Dorms","Other"]
@@ -72,15 +72,17 @@ class AlertView: UIViewController {
     
     func sendAlert() {
         // Create Alert Object
-        var alert = NSMutableDictionary()
-        alert.setValue("John Dough", forKey: "name")
-        alert.setValue("40.7134519,-74.003797", forKey: "location")
-        alert.setValue("06.07.2015", forKey: "date")
-        alert.setValue("9:45pm", forKey: "time")
-        //alert.setValue(["2126661234"], forKey: "contacts")
+        
+        let alert = AlertDataObject()
+        alert.alertType = "emergency"
+        alert.buildingName = "Fulton Dorms"
+        alert.campusName = "New York City"
+        alert.mapAddress = "14 Fulton st."
+        alert.specifics = "Floor 12, Room 342"
+        alert.userEmail = "bm09148n@pace.edu"
         
         // Send Alert
-        APIClient.sendAlert(alert)
+        APIClient.sendAlert(alert.nativeData)
         
         // Close Screen
         self.dismissViewControllerAnimated(true, completion: {})

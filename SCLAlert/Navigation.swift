@@ -12,6 +12,8 @@ class Navigation: UINavigationController, UINavigationBarDelegate {
     
     lazy var bar = UINavigationBar()
     let font = UIFont.systemFontOfSize(16, weight: UIFontWeightRegular)
+    let defaultTint = UIColor(red: 28/255, green: 108/255, blue: 182/255, alpha: 1)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +22,13 @@ class Navigation: UINavigationController, UINavigationBarDelegate {
 //        
 //        bar.frame = CGRect(x: -50, y: -100, width: 250, height: 120)
 //        
-        bar.translucent = true
-        bar.barTintColor = UIColor(white: 1, alpha: 0.5)
+        bar.translucent = false
+        bar.barTintColor = defaultTint
+        
+        print(bar.barTintColor)
+        setTint(UIColor.whiteColor())
 //        bar.backgroundColor = UIColor(white: 1, alpha: 0.5)
-//        bar.tintColor = UIColor.blueColor()
+
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
 //        
@@ -42,10 +47,11 @@ class Navigation: UINavigationController, UINavigationBarDelegate {
     
     func setTint(color:UIColor) {
         // Set Text Color
-        bar.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : color]
+        bar.titleTextAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         // Set Buttons Tint Color
-        bar.tintColor = color
+        bar.tintColor = UIColor.whiteColor()
+//        bar.tintColor = defaultTint
         
         // Reset Status Bar
         setNeedsStatusBarAppearanceUpdate()

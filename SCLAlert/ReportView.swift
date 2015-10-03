@@ -51,7 +51,7 @@ class ReportView: UIViewController {
         var text = descriptionText.text
         
         // Create Report Object
-        var report = NSMutableDictionary()
+        let report = NSMutableDictionary()
         report.setValue("John Dough", forKey: "name")
         report.setValue("06.06.2015", forKey: "date")
         report.setValue("9:45pm", forKey: "time")

@@ -19,8 +19,8 @@ class ReportMainView: UIViewController {
         super.viewDidLoad()
         
         // Add x Button to Navigation
-        var xImage = UIImage(named: "cancelx16.png")
-        var dismissButton = UIBarButtonItem(image: xImage, style: UIBarButtonItemStyle.Done, target: self, action: "dismiss")
+        let xImage = UIImage(named: "cancelx16.png")
+        let dismissButton = UIBarButtonItem(image: xImage, style: UIBarButtonItemStyle.Done, target: self, action: "dismiss")
         self.navigationItem.leftBarButtonItem = dismissButton
         
     }

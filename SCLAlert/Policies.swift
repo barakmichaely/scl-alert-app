@@ -33,13 +33,13 @@ class Policies: UIViewController, UIWebViewDelegate {
     
     func webViewDidStartLoad(webView: UIWebView) {
         //activityIndicator.startAnimating()
-        println(activityIndicator.hidden)
-        println(activityIndicator.frame.origin)
+        print(activityIndicator.hidden)
+        print(activityIndicator.frame.origin)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         //activityIndicator.stopAnimating()
-        println(activityIndicator.hidden)
+        print(activityIndicator.hidden)
     }
     
 
